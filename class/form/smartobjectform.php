@@ -76,6 +76,7 @@ class SmartobjectForm extends XoopsThemeForm {
 		if ($key) {
 			if ($this->targetObject->vars[$key]['readonly']) {
 				$formElement->setExtra('disabled="disabled"');
+				$formElement->setName($key . '-readonly');
 				// Since this element is disable, we still want to pass it's value in the form
 				$hidden = new XoopsFormHidden($key, $this->targetObject->vars[$key]['value']);
 				$this->addElement($hidden);
@@ -554,8 +555,8 @@ class SmartobjectForm extends XoopsThemeForm {
 
 				default:
 				case 'textarea':
-					$form_rows = isset($control['form_rows']) ? $control['form_rows'] : 5;
-					$form_cols = isset($control['form_cols']) ? $control['form_cols'] : 60;
+					$form_rows = isset($control['rows']) ? $control['rows'] : 5;
+					$form_cols = isset($control['cols']) ? $control['cols'] : 60;
 
 					$editor = new XoopsFormTextArea($var['form_caption'], $key, $this->targetObject->getVar($key, 'e'), $form_rows, $form_cols);
 					if ($var['form_dsc']) {
@@ -609,7 +610,7 @@ class SmartobjectForm extends XoopsThemeForm {
 	{
 		$required =& $this->getRequired();
 		$ret = "
-			<form name='".$this->getName()."' id='".$this->getName()."' action='".$this->getAction()."' method='".$this->getMethod()."' onsubmit='return xoopsFormValidate_".$this->getName()."();'".$this->getExtra().">
+			<form name='".$this->getName()."' id='".$this->getName()."' action='".$this->getAction()."' method='".$this->getMethod()."' onsubmit='return xoopsFormValidate_".$this->getName()."(this);'".$this->getExtra().">
 			<table width='100%' class='outer' cellspacing='1'>
 			<tr><th colspan='2'>".$this->getTitle()."</th></tr>
 		";
@@ -662,21 +663,89 @@ class SmartobjectForm extends XoopsThemeForm {
 		if (!$smartyName) {
 			$smartyName = $this->getName();
 		}
+
 		$tpl->assign($smartyName, array('title' => $this->getTitle(), 'name' => $this->getName(), 'action' => $this->getAction(),  'method' => $this->getMethod(), 'extra' => 'onsubmit="return xoopsFormValidate_'.$this->getName().'();"'.$this->getExtra(), 'javascript' => $js, 'elements' => $elements));
 	}
 
 
-/*	function renderValidationJS( $withtags = true ) {
-		$js = parent::renderValidationJS(false);
-		foreach ( $this->getElements() as $ele ) {
-			if ( method_exists( $ele, 'renderValidationJS' ) ) {
-				$js .= $ele->renderValidationJS();
+function renderValidationJS( $withtags = true ) {
+		$js = "";
+		if ( $withtags ) {
+			$js .= "\n<!-- Start Form Validation JavaScript //-->\n<script type='text/javascript'>\n<!--//\n";
+		}
+		$myts =& MyTextSanitizer::getInstance();
+		$formname = $this->getName();
+		$js .= "function xoopsFormValidate_{$formname}(myform) {";
+		// First, output code to check required elements
+		$elements = $this->getRequired();
+		foreach ( $elements as $elt ) {
+			$eltname    = $elt->getName();
+			$eltcaption = trim( $elt->getCaption() );
+			$eltmsg = empty($eltcaption) ? sprintf( _FORM_ENTER, $eltname ) : sprintf( _FORM_ENTER, $eltcaption );
+			$eltmsg = str_replace('"', '\"', stripslashes( $eltmsg ) );
+			if (strtolower(get_class($elt)) == 'xoopsformradio') {
+				$js .= "var myOption = -1;";
+				$js .= "for (i=myform.{$eltname}.length-1; i > -1; i--) {
+					if (myform.{$eltname}[i].checked) {
+						myOption = i; i = -1;
+					}
+				}
+				if (myOption == -1) {
+					window.alert(\"{$eltmsg}\"); myform.{$eltname}[0].focus(); return false; }\n";
+
+			}elseif (strtolower(get_class($elt)) == 'smartformselect_multielement') {
+				$js .= "var hasSelections = false;";
+				$js .= "for(var i = 0; i < myform['{$eltname}[]'].length; i++){
+					if (myform['{$eltname}[]'].options[i].selected) {
+						hasSelections = true;
+					}
+
+				}
+				if (hasSelections == false) {
+					window.alert(\"{$eltmsg}\"); myform['{$eltname}[]'].options[0].focus(); return false; }\n";
+
+			}elseif (strtolower(get_class($elt)) == 'xoopsformcheckbox') {
+				$js .= "var hasSelections = false;";
+				//sometimes, there is an implicit '[]', sometimes not
+				if(strpos($eltname, '[') === false){
+					$js .= "for(var i = 0; i < myform['{$eltname}[]'].length; i++){
+						if (myform['{$eltname}[]'][i].checked) {
+							hasSelections = true;
+						}
+
+					}
+					if (hasSelections == false) {
+						window.alert(\"{$eltmsg}\"); myform['{$eltname}[]'][0].focus(); return false; }\n";
+				}else{
+					$js .= "for(var i = 0; i < myform['{$eltname}'].length; i++){
+						if (myform['{$eltname}'][i].checked) {
+							hasSelections = true;
+						}
+
+					}
+					if (hasSelections == false) {
+						window.alert(\"{$eltmsg}\"); myform['{$eltname}'][0].focus(); return false; }\n";
+				}
+
+			}else{
+				$js .= "if ( myform.{$eltname}.value == \"\" ) "
+					. "{ window.alert(\"{$eltmsg}\"); myform.{$eltname}.focus(); return false; }\n";
+				}
+		}
+		// Now, handle custom validation code
+		$elements = $this->getElements( true );
+		foreach ( $elements as $elt ) {
+			if ( method_exists( $elt, 'renderValidationJS' ) ) {
+				if ( $eltjs = $elt->renderValidationJS() ) {
+					$js .= $eltjs . "\n";
+				}
 			}
 		}
+		$js .= "return true;\n}\n";
 		if ( $withtags ) {
-			$js .= "//--></script>\n<!-- End Form Validation JavaScript //-->\n";
+			$js .= "//--></script>\n<!-- End Form Vaidation JavaScript //-->\n";
 		}
 		return $js;
-	}*/
+	}
 }
 ?>

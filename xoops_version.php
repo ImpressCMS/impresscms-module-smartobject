@@ -13,7 +13,7 @@ if (!defined("XOOPS_ROOT_PATH")) {
 }
 
 $modversion['name'] = "SmartObject Framework";
-$modversion['version'] = 0.92;
+$modversion['version'] = 1.0;
 $modversion['description'] = "Framework providing functionnalities to SmartModules";
 $modversion['author'] = "The SmartFactory [www.smartfactory.ca]";
 $modversion['credits'] = "INBOX Solutions, Mithrandir, Sudhaker, Ampersand Design, Technigrafa";

@@ -74,9 +74,11 @@ class SmartObjectTreeTable extends SmartObjectTable {
 			}
 
 			$space = '';
-			for ($i = 0; $i < $level; $i++) {
-				$space = $space . '--';
-			}
+			if($column->getKeyName() == $this->_objectHandler->identifierName){
+				for ($i = 0; $i < $level; $i++) {
+					$space = $space . '--';
+				}
+		}
 
 			if ($space != '') {
 				$space .= '&nbsp;';
@@ -118,7 +120,7 @@ class SmartObjectTreeTable extends SmartObjectTable {
 		$aObject['actions'] = $actions;
 
 		$this->_tpl->assign('smartobject_actions_column_width', count($actions) * 30);
-
+		$aObject['id'] = $object->id();
 		$this->_aObjects[] = $aObject;
 
 		$childrenObjects = $this->getChildrenOf($object->id());
@@ -150,7 +152,9 @@ class SmartObjectTreeTable extends SmartObjectTable {
 	}
 
 	function fetchObjects() {
-		return $this->_objectHandler->getObjects($this->_criteria, 'parentid');
+		$ret = $this->_objectHandler->getObjects($this->_criteria, 'parentid');
+		return $ret;
+
 	}
 }
 

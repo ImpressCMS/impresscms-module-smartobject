@@ -187,5 +187,7 @@ define('_CO_SOBJECT_DESC', "Description");
 define('_CO_SOBJECT_URLLINK_TARGET', "Open link in:");
 define('_CO_SOBJECT_URLLINK_SELF', "Same window");
 define('_CO_SOBJECT_URLLINK_BLANK', "new window");
-define('_CO_SOBJECT_CURRENT_FILE', "Current file: ");
+
+define('_CO_SOBJECT_ANY', "Any");
+define('_CO_SOBJECT_EDITOR', "Prefered text editor");
 ?>

@@ -554,6 +554,7 @@ function smart_openclose_collapsable($name) {
 function smart_close_collapsable($name) {
 	echo "</div>";
 	smart_openclose_collapsable($name);
+	echo "<br />";
 }
 function smart_setCookieVar($name, $value, $time = 0) {
 	if ($time == 0) {
@@ -965,4 +966,12 @@ function smart_getEditors() {
 	return $ret;
 }
 
+function smart_getTablesArray($moduleName, $items) {
+	$ret = array();
+	foreach ($items as $item) {
+		$ret[] = $moduleName . '_' . $item;
+	}
+	$ret[] = $moduleName . '_meta';
+	return $ret;
+}
 ?>

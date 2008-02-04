@@ -493,6 +493,7 @@ class SmartobjectDbupdater {
 		$this->_dbTypesArray[XOBJ_DTYPE_TIME_ONLY] = 'int(11)';
 		$this->_dbTypesArray[XOBJ_DTYPE_URLLINK] = 'int(11)';
 		$this->_dbTypesArray[XOBJ_DTYPE_FILE] = 'int(11)';
+		$this->_dbTypesArray[XOBJ_DTYPE_IMAGE] = 'varchar(255)';
 	}
 	/**
 	 * Use to execute a general query

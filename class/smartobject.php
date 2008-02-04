@@ -27,6 +27,7 @@ define('XOBJ_DTYPE_FLOAT', 201);
 define('XOBJ_DTYPE_TIME_ONLY', 202);
 define('XOBJ_DTYPE_URLLINK', 203);
 define('XOBJ_DTYPE_FILE', 204);
+define('XOBJ_DTYPE_IMAGE', 205);
 
 define('XOBJ_DTYPE_FORM_SECTION', 210);
 define('XOBJ_DTYPE_FORM_SECTION_CLOSE', 211);
@@ -479,13 +480,13 @@ class SmartObject extends XoopsObject {
         }
     }
 
-    function getVarInfo($key, $info = '') {
+    function getVarInfo($key = '', $info = '') {
 		if (isset($this->vars[$key][$info])) {
 			return $this->vars[$key][$info];
 		}elseif ($info == '' && isset($this->vars[$key])) {
 			return $this->vars[$key];
 		}  else {
-			return false;
+			return $this->vars;
 		}
 	}
 
@@ -682,7 +683,6 @@ class SmartObject extends XoopsObject {
                     }
                     break;
                 case XOBJ_DTYPE_INT:
-                case XOBJ_DTYPE_DATE:
                 case XOBJ_DTYPE_TIME_ONLY:
                     $cleanv = intval($cleanv);
                     break;

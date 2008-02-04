@@ -123,12 +123,12 @@ class SmartobjectCategoryHandler extends SmartPersistableObjectHandler {
         $this->SmartPersistableObjectHandler($db, 'category', 'categoryid', 'name', 'description', $modulename);
     }
 
-	function getAllCategoriesArray($parentid=0, $perm_name=false) {
+	function getAllCategoriesArray($parentid=0, $perm_name=false, $sort = 'parentid', $order='ASC') {
 
 		if (!$this->allCategoriesObj) {
 			$criteria = new CriteriaCompo();
-			$criteria->setSort('parentid');
-
+			$criteria->setSort($sort);
+			$criteria->setOrder($order);
 			global $xoopsUser;
 			$userIsAdmin = is_object($xoopsUser) && $xoopsUser->isAdmin();
 
