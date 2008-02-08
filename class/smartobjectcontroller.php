@@ -38,58 +38,70 @@ class SmartObjectController {
 
     function postDataToObject(&$smartObj) {
     	foreach(array_keys($smartObj->vars) as $key) {
-    		// check if this field's value is available in the POST array
-    		// However, we don't need this value if it's the key field as the object has already been created
-    		if (isset($_POST[$key]) && ($key != $this->handler->keyName)) {
-    			// check to see of it's a value sent by a xoopsformdatetime
-    			if (is_array($_POST[$key]) && isset($_POST[$key]['date']))  {
-    				$value = strtotime($_POST[$key]['date']) + $_POST[$key]['time'];
-    			}else {
-    				$value = $_POST[$key];
-     			}
-    			$smartObj->setVar($key, $value);
-    		}elseif($smartObj->vars[$key]['data_type'] == XOBJ_DTYPE_IMAGE) {
-    			if(isset($_POST['url_'.$key]) && $_POST['url_'.$key] !=''){
-    				$oldFile = $smartObj->getUploadDir(true).$smartObj->getVar($key, 'e');
-    				$smartObj->setVar($key, $_POST['url_'.$key]);
-    				if(file_exists($oldFile)){
-	    				unlink($oldFile);
+    		switch ($smartObj->vars[$key]['data_type']) {
+    			case XOBJ_DTYPE_IMAGE:
+	    			if(isset($_POST['url_'.$key]) && $_POST['url_'.$key] !=''){
+	    				$oldFile = $smartObj->getUploadDir(true).$smartObj->getVar($key, 'e');
+	    				$smartObj->setVar($key, $_POST['url_'.$key]);
+	    				if(file_exists($oldFile)){
+		    				unlink($oldFile);
+		    			}
 	    			}
-    			}
-    			if(isset($_POST['delete_'.$key]) && $_POST['delete_'.$key] == '1'){
-    				$oldFile = $smartObj->getUploadDir(true).$smartObj->getVar($key, 'e');
-    				$smartObj->setVar($key, '');
-    				if(file_exists($oldFile)){
-	    				unlink($oldFile);
+	    			if(isset($_POST['delete_'.$key]) && $_POST['delete_'.$key] == '1'){
+	    				$oldFile = $smartObj->getUploadDir(true).$smartObj->getVar($key, 'e');
+	    				$smartObj->setVar($key, '');
+	    				if(file_exists($oldFile)){
+		    				unlink($oldFile);
+		    			}
 	    			}
-    			}
-    		}elseif($smartObj->vars[$key]['data_type'] == XOBJ_DTYPE_URLLINK) {
-    			$linkObj = $smartObj->getUrlLinkObj($key);
-    			$linkObj->setVar('caption', $_POST['caption_'.$key]);
-    			$linkObj->setVar('description', $_POST['desc_'.$key]);
-    			$linkObj->setVar('target', $_POST['target_'.$key]);
-    			$linkObj->setVar('url', $_POST['url_'.$key]);
-    			if($linkObj->getVar('url') != '' ){
-    				$smartObj->storeUrlLinkObj($linkObj);
-    			}
-    			//todo: catch errors
-    			$smartObj->setVar($key, $linkObj->getVar('urllinkid'));
-    		}elseif($smartObj->vars[$key]['data_type'] == XOBJ_DTYPE_FILE) {
-    			if(!isset($_FILES['upload_'.$key]['name']) || $_FILES['upload_'.$key]['name'] == ''){
-    				$fileObj = $smartObj->getFileObj($key);
-	    			$fileObj->setVar('caption', $_POST['caption_'.$key]);
-	    			$fileObj->setVar('description', $_POST['desc_'.$key]);
-	    			$fileObj->setVar('url', $_POST['url_'.$key]);
-	    			if(!($fileObj->getVar('url') == '' && $fileObj->getVar('url') == '' && $fileObj->getVar('url') == '')){
-	    				$res = $smartObj->storeFileObj($fileObj);
-						if($res){
-		    				$smartObj->setVar($key, $fileObj->getVar('fileid'));
-						}else{
-							//error setted, but no error message (to be improved)
-							$smartObj->setErrors($fileObj->getErrors());
-						}
+    			break;
+
+    			case XOBJ_DTYPE_URLLINK:
+	    			$linkObj = $smartObj->getUrlLinkObj($key);
+	    			$linkObj->setVar('caption', $_POST['caption_'.$key]);
+	    			$linkObj->setVar('description', $_POST['desc_'.$key]);
+	    			$linkObj->setVar('target', $_POST['target_'.$key]);
+	    			$linkObj->setVar('url', $_POST['url_'.$key]);
+	    			if($linkObj->getVar('url') != '' ){
+	    				$smartObj->storeUrlLinkObj($linkObj);
 	    			}
-    			}
+	    			//todo: catch errors
+	    			$smartObj->setVar($key, $linkObj->getVar('urllinkid'));
+    			break;
+
+    			case XOBJ_DTYPE_FILE:
+	    			if(!isset($_FILES['upload_'.$key]['name']) || $_FILES['upload_'.$key]['name'] == ''){
+	    				$fileObj = $smartObj->getFileObj($key);
+		    			$fileObj->setVar('caption', $_POST['caption_'.$key]);
+		    			$fileObj->setVar('description', $_POST['desc_'.$key]);
+		    			$fileObj->setVar('url', $_POST['url_'.$key]);
+		    			if(!($fileObj->getVar('url') == '' && $fileObj->getVar('url') == '' && $fileObj->getVar('url') == '')){
+		    				$res = $smartObj->storeFileObj($fileObj);
+							if($res){
+			    				$smartObj->setVar($key, $fileObj->getVar('fileid'));
+							}else{
+								//error setted, but no error message (to be improved)
+								$smartObj->setErrors($fileObj->getErrors());
+							}
+		    			}
+	    			}
+    			break;
+
+    			case XOBJ_DTYPE_STIME:
+    			case XOBJ_DTYPE_MTIME:
+    			case XOBJ_DTYPE_LTIME:
+	    			// check if this field's value is available in the POST array
+	    			if (is_array($_POST[$key]) && isset($_POST[$key]['date']))  {
+	    				$value = strtotime($_POST[$key]['date']) + $_POST[$key]['time'];
+	    			}else {
+	    				$value = intval($_POST[$key]);
+	    				$smartObj->setVar($key, $value);
+	     			}
+    			break;
+
+    			default:
+					$smartObj->setVar($key, $_POST[$key]);
+    			break;
     		}
     	}
     }
