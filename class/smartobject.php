@@ -1069,9 +1069,9 @@ class SmartObject extends XoopsObject {
 	 * @param bool $userSide for futur use, to do something different on the user side
 	 * @return content of the template if $fetchOnly or nothing if !$fetchOnly
 	 */
-    function displaySingleObject($fetchOnly=false, $userSide=false) {
+    function displaySingleObject($fetchOnly=false, $userSide=false, $actions=array()) {
 		include_once SMARTOBJECT_ROOT_PATH."class/smartobjectsingleview.php";
-		$singleview = new SmartObjectSingleView($this, $userSide);
+		$singleview = new SmartObjectSingleView($this, $userSide, $actions);
 		// add all fields mark as displayOnSingleView except the keyid
 		foreach($this->vars as $key=>$var) {
 			if ($key != $this->handler->keyName && $var['displayOnSingleView']) {
