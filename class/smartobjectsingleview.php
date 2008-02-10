@@ -62,15 +62,17 @@ class SmartObjectSingleView {
 	var $_tpl;
 	var $_rows;
 	var $_actions;
+	var $_headerAsRow=true;
 
 	/**
     * Constructor
     */
-	function SmartObjectSingleView(&$object, $userSide=false, $actions=array())
+	function SmartObjectSingleView(&$object, $userSide=false, $actions=array(), $headerAsRow=true)
 	{
 		$this->_object = $object;
 		$this->_userSide = $userSide;
 		$this->_actions = $actions;
+		$this->_headerAsRow = $headerAsRow;
 	}
 
 	function addRow($rowObj) {
@@ -114,6 +116,7 @@ class SmartObjectSingleView {
 			$smartobject_object_array['zaction']['caption'] = _CO_SOBJECT_ACTIONS;
 		}
 
+		$this->_tpl->assign('smartobject_header_as_row', $this->_headerAsRow);
 		$this->_tpl->assign('smartobject_object_array', $smartobject_object_array);
 
 		if ($fetchOnly) {
