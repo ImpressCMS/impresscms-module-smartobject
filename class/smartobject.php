@@ -1141,8 +1141,11 @@ class SmartObject extends XoopsObject {
 	function getUrlLinkObj($key){
 		$smartobject_linkurl_handler = xoops_getModuleHandler('urllink', 'smartobject');
 		$urllinkid = $this->getVar($key) != null ? $this->getVar($key) : 0;
-
-		return $smartobject_linkurl_handler->get($urllinkid);
+		if($urllinkid != 0){
+			return  $smartobject_linkurl_handler->get($urllinkid);
+		}else{
+			return $smartobject_linkurl_handler->create();
+		}
 	}
 
 	function &storeUrlLinkObj($urlLinkObj){
@@ -1153,7 +1156,11 @@ class SmartObject extends XoopsObject {
 	function getFileObj($key){
 		$smartobject_file_handler = xoops_getModuleHandler('file', 'smartobject');
 		$fileid = $this->getVar($key) != null ? $this->getVar($key) : 0;
-		return  $smartobject_file_handler->get($fileid);
+		if($fileid != 0){
+			return  $smartobject_file_handler->get($fileid);
+		}else{
+			return $smartobject_file_handler->create();
+		}
 	}
 
 	function &storeFileObj($fileObj){
