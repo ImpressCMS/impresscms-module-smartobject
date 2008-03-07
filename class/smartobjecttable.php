@@ -28,13 +28,15 @@ class SmartObjectColumn {
 	var $_align;
 	var $_width;
 	var $_customMethodForValue;
+	var $_customCaption;
 
-	function SmartObjectColumn($keyname, $align='left', $width=false, $customMethodForValue=false, $param = false) {
+	function SmartObjectColumn($keyname, $align='left', $width=false, $customMethodForValue=false, $param = false, $customCaption = false) {
 		$this->_keyname = $keyname;
 		$this->_align = $align;
 		$this->_width = $width;
 		$this->_customMethodForValue = $customMethodForValue;
 		$this->_param = $param;
+		$this->_customCaption = $customCaption;
 	}
 
 	function getKeyName() {
@@ -53,6 +55,11 @@ class SmartObjectColumn {
 		}
 		return $ret;
 	}
+
+	function getCustomCaption() {
+		return $this->_customCaption;
+	}
+
 }
 
 /**
@@ -99,6 +106,7 @@ class SmartObjectTable {
 	var $_showFilterAndLimit = true;
 	var $_enableColumnsSorting = true;
 	var $_customTemplate = false;
+	var $_withSelectedActions = array();
 
 	/**
     * Constructor
@@ -198,6 +206,10 @@ class SmartObjectTable {
 			return smart_getCookieVar($_SERVER['PHP_SELF'] . '_' . $this->_id . '_ordersel', 'ASC');
 		}
 	}
+	function addWithSelectedActions($actions = array()){
+		$this->addColumn(new SmartObjectColumn('checked', 'center', 20, false, false, '&nbsp;'));
+		$this->_withSelectedActions = $actions;
+	}
 
 	/**
     * Adding a filter in the table
@@ -274,7 +286,9 @@ class SmartObjectTable {
 					if(method_exists($object, 'initiateCustomFields')){
 						//$object->initiateCustomFields();
 					}
-					if ($column->_customMethodForValue && method_exists($object, $column->_customMethodForValue)) {
+					if($column->_keyname == 'checked'){
+						$value = '<input type ="checkbox" name="selected_smartobjects[]" value="'.$object->id().'" />';
+					}elseif ($column->_customMethodForValue && method_exists($object, $column->_customMethodForValue)) {
 						$method = $column->_customMethodForValue;
 						if($column->_param){
 							$value = $object->$method($column->_param);
@@ -620,14 +634,17 @@ class SmartObjectTable {
 		$orderArray['DESC']['neworder'] = 'ASC';
 
 		$aColumns = array();
+
 		foreach ($this->_columns as $column) {
 			$aColumn = array();
 			$aColumn['width'] = $column->getWidth();
 			$aColumn['align'] = $column->getAlign();
 			$aColumn['key'] = $column->getKeyName();
-
-			$aColumn['caption'] = isset($this->_tempObject->vars[$column->getKeyName()]['form_caption']) ? $this->_tempObject->vars[$column->getKeyName()]['form_caption'] : $column->getKeyName();
-
+			if($column->getCustomCaption()){
+				$aColumn['caption'] = $column->getCustomCaption();
+			}else{
+				$aColumn['caption'] = isset($this->_tempObject->vars[$column->getKeyName()]['form_caption']) ? $this->_tempObject->vars[$column->getKeyName()]['form_caption'] : $column->getKeyName();
+			}
 			// Are we doing a GET sort on this column ?
 			$getSort = (isset($_GET[$this->_objectHandler->_itemname . '_' . 'sortsel']) && $_GET[$this->_objectHandler->_itemname . '_' . 'sortsel'] == $column->getKeyName()) || ($this->_sortsel == $column->getKeyName());
 			$order = isset($_GET[$this->_objectHandler->_itemname . '_' . 'ordersel']) ? $_GET[$this->_objectHandler->_itemname . '_' . 'ordersel'] : 'DESC';
@@ -660,6 +677,9 @@ class SmartObjectTable {
 		$this->_tpl->assign('smartobject_actionButtons', $this->_actionButtons);
 		$this->_tpl->assign('smartobject_introButtons', $this->_introButtons);
 		$this->_tpl->assign('smartobject_id', $this->_id);
+		if(!empty($this->_withSelectedActions)){
+			$this->_tpl->assign('smartobject_withSelectedActions', $this->_withSelectedActions);
+		}
 
 		$smartobject_table_template = $this->_customTemplate ? $this->_customTemplate : 'smartobject_smarttable_display.html';
 		if ($fetchOnly) {

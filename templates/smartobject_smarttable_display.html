@@ -93,7 +93,7 @@
 </form>
 <{/if}>
 
-<{if $smartobject_actionButtons}>
+<{if $smartobject_actionButtons || $smartobject_withSelectedActions}>
 	<form name="form_<{$smartobject_id}>" id="form_<{$smartobject_id}>" method="POST">
 <{/if}>
 <table width='100%' cellspacing=1 cellpadding=3 border=0 class = outer>
@@ -134,13 +134,27 @@
 		</tr>
 	<{/if}>
 </table>
-<{if $smartobject_actionButtons}> 
-	<div style="padding: 5px;text-align: right; border-left: 1px solid silver; border-bottom: 1px solid silver; border-right: 1px solid silver;">
-		<input type='hidden' name='op' id='op' value='' />
-		<{foreach from=$smartobject_actionButtons item=actionButton}>
-			<input type="submit" name="<{$actionButton.op}>" onclick="this.form.elements.op.value='<{$actionButton.op}>'" value="<{$actionButton.text}>" />
-		<{/foreach}>
-	</div>
+<{if $smartobject_withSelectedActions}> 
+	<input type='hidden' name='op' id='op' value='' />
+	<{if $smartobject_actionButtons || $smartobject_withSelectedActions}> 
+		<div style="padding: 5px;text-align: left; border-left: 1px solid silver; border-bottom: 1px solid silver; border-right: 1px solid silver;">
+		<{$smarty.const._CO_SOBJECT_WITH_SELECTED}>
+		<select name='selected_action'>
+			<option value = ''>---</option>
+			<{foreach from=$smartobject_withSelectedActions key=key item=action}>
+				<option value = <{$key}>><{$action}></option>
+			<{/foreach}>
+		</select>
+		<input type="submit" name="<{$actionButton.op}>" onclick="this.form.elements.op.value='with_selected_actions'" value="<{$smarty.const._CO_SOBJECT_SUBMIT}>" />
+		</div>
+	<{/if}>
+	<{if $smartobject_actionButtons}> 
+		<div style="padding: 5px;text-align: right; border-left: 1px solid silver; border-bottom: 1px solid silver; border-right: 1px solid silver;">
+			<{foreach from=$smartobject_actionButtons item=actionButton}>
+				<input type="submit" name="<{$actionButton.op}>" onclick="this.form.elements.op.value='<{$actionButton.op}>'" value="<{$actionButton.text}>" />
+			<{/foreach}>
+		</div>
+	<{/if}>
 </form>
 <{/if}>
 <{if $smartobject_pagenav}>

@@ -270,11 +270,10 @@ class SmartPersistableObjectHandler extends XoopsObjectHandler {
         } else {
         	$obj_array = $this->getObjects($criteria, false, $as_object);
         	//patch : weird bug of indexing by id even if id_as_key = false;
-        	if(!isset($obj_array[0])){
+        	if(!isset($obj_array[0]) && is_object($obj_array[$id])){
         		$obj_array[0] = $obj_array[$id];
         		unset($obj_array[$id]);
 				$obj_array[0]->unsetNew();
-
         	}
         }
 

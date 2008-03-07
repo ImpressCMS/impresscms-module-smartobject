@@ -190,4 +190,6 @@ define('_CO_SOBJECT_URLLINK_BLANK', "new window");
 
 define('_CO_SOBJECT_ANY', "Any");
 define('_CO_SOBJECT_EDITOR', "Prefered text editor");
+define('_CO_SOBJECT_WITH_SELECTED', "With selected: ");
+
 ?>
