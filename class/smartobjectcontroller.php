@@ -194,13 +194,22 @@ class SmartObjectController {
      * @param bool $exit if set to TRUE then the script ends
      * @return bool
      */
-    function &storeFromDefaultForm($created_success_msg, $modified_success_msg, $redirect_page=false, $debug=false)
+    function &storeFromDefaultForm($created_success_msg, $modified_success_msg, $redirect_page=false, $debug=false, $x_param = false)
     {
     	$objectid = (isset($_POST[$this->handler->keyName])) ? intval($_POST[$this->handler->keyName]) : 0;
     	if ($debug) {
-    		$smartObj = $this->handler->getD($objectid);
+    		if($x_param){
+    			$smartObj = $this->handler->getD($objectid, true,  $x_param);
+    		}else{
+    			$smartObj = $this->handler->getD($objectid);
+    		}
+
     	} else {
-    		$smartObj = $this->handler->get($objectid);
+    		if($x_param){
+    			$smartObj = $this->handler->get($objectid, true, false, false, $x_param);
+    		}else{
+    			$smartObj = $this->handler->get($objectid);
+    		}
     	}
 
 
@@ -237,9 +246,9 @@ class SmartObjectController {
     	return $this->storeSmartObject(true);
     }
 
-    function &storeSmartObject($debug=false)
+    function &storeSmartObject($debug=false, $xparam = false)
     {
-    	$ret =& $this->storeFromDefaultForm('', '', null, $debug);
+    	$ret =& $this->storeFromDefaultForm('', '', null, $debug, $xparam);
 
     	return $ret;
     }
