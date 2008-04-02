@@ -642,24 +642,20 @@ function smart_seo_title($title='', $withExt=true)
 */
 function smart_modFooter() {
 	global $xoopsConfig, $xoopsModule, $xoopsModuleConfig;
+
+	include_once XOOPS_ROOT_PATH . '/class/template.php';
+	$tpl =& new XoopsTpl();
+	
 	$hModule = & xoops_gethandler('module');
 	$versioninfo = & $hModule->get($xoopsModule->getVar('mid'));
 	$modfootertxt = "Module " . $versioninfo->getInfo('name') . " - Version " . $versioninfo->getInfo('version') . "";
 	$modfooter = "<a href='" . $versioninfo->getInfo('support_site_url') . "' target='_blank'><img src='" . XOOPS_URL . "/modules/" . $xoopsModule->getVar('dirname') . "/images/cssbutton.gif' title='" . $modfootertxt . "' alt='" . $modfootertxt . "'/></a>";
-
+	$tpl->assign('modfooter', $modfooter);
+	
 	if (!defined('_AM_SOBJECT_XOOPS_PRO')) {
 		define("_AM_SOBJECT_XOOPS_PRO", "Do you need help with this module ?<br />Do you need new features not yet availale ?");
 	}
-
-	echo "<div style='padding-top: 8px; padding-bottom: 10px; text-align: center;'>" . $modfooter . "</div>";
-	echo '<div style="border: 2px solid #C2CDD6">';
-	echo '<div style="font-weight:bold; padding-top: 5px; text-align: center;">' . _AM_SOBJECT_XOOPS_PRO . '<br /><a href="http://inboxinternational.com/modules/smartcontent/page.php?pageid=10"><img src="http://inboxinternational.com/images/INBOXsign150_noslogan.gif" alt="Need XOOPS Professional Services?" title="Need XOOPS Professional Services?"></a>
-<a href="http://inboxinternational.com/modules/smartcontent/page.php?pageid=10"><img src="http://inboxinternational.com/images/xoops_services_pro_english.gif" alt="Need XOOPS Professional Services?" title="Need XOOPS Professional Services?"></a>
-</div>';
-	echo '</div>';
-
-
-	return $modfooter;
+	$tpl->display(SMARTOBJECT_ROOT_PATH . 'templates/smartobject_admin_footer.html');
 }
 function smart_xoops_cp_footer() {
 	smart_modFooter();
