@@ -73,6 +73,8 @@ $modversion['tables'][4] = "smartobject_rating";
 $modversion['tables'][5] = "smartobject_adsense";
 $modversion['tables'][6] = "smartobject_currency";
 $modversion['tables'][7] = "smartobject_customtag";
+$modversion['tables'][8] = "smartobject_file";
+$modversion['tables'][9] = "smartobject_urllink";
 
 // Blocks
 $i = 0;
