@@ -302,15 +302,9 @@ function xoops_module_update_smartobject($module) {
 
 function xoops_module_install_smartobject($module) {
 	ob_start();
-
+	
 	echo "Using the ImpressCMS onInstall event";
     $feedback = ob_get_clean();
-    if (method_exists($module, "setMessage")) {
-        $module->setMessage($feedback);
-    }
-    else {
-        echo $feedback;
-    }
-    return true;
+    return $feedback;
 }
 ?>
