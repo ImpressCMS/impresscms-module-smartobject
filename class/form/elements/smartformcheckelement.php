@@ -28,5 +28,31 @@ class SmartFormCheckElement extends XoopsFormCheckBox {
 		}
 		return $ret;
 	}
+	function renderValidationJS(){
+		$js .= "var hasSelections = false;";
+		//sometimes, there is an implicit '[]', sometimes not
+		$eltname = $this->getName();
+		if(strpos($eltname, '[') === false){
+			$js .= "for(var i = 0; i < myform['{$eltname}[]'].length; i++){
+				if (myform['{$eltname}[]'][i].checked) {
+					hasSelections = true;
+				}
+
+			}
+			if (hasSelections == false) {
+				window.alert(\"{$eltmsg}\"); myform['{$eltname}[]'][0].focus(); return false; }\n";
+		}else{
+			$js .= "for(var i = 0; i < myform['{$eltname}'].length; i++){
+				if (myform['{$eltname}'][i].checked) {
+					hasSelections = true;
+				}
+
+			}
+			if (hasSelections == false) {
+				window.alert(\"{$eltmsg}\"); myform['{$eltname}'][0].focus(); return false; }\n";
+		}
+		return $js;
+	}
+
 }
 ?>

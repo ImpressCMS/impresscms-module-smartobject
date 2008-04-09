@@ -640,7 +640,10 @@ class SmartObjectTable {
 			$aColumn['width'] = $column->getWidth();
 			$aColumn['align'] = $column->getAlign();
 			$aColumn['key'] = $column->getKeyName();
-			if($column->getCustomCaption()){
+			if($column->_keyname == 'checked'){
+				$aColumn['caption'] = '<input type ="checkbox" id="checkall_smartobjects" name="checkall_smartobjects"' .
+						' value="checkall_smartobjects" onclick="smartobject_checkall(window.document.form_'.$this->_id.', \'selected_smartobjects\');" />';
+			}elseif($column->getCustomCaption()){
 				$aColumn['caption'] = $column->getCustomCaption();
 			}else{
 				$aColumn['caption'] = isset($this->_tempObject->vars[$column->getKeyName()]['form_caption']) ? $this->_tempObject->vars[$column->getKeyName()]['form_caption'] : $column->getKeyName();
@@ -648,12 +651,16 @@ class SmartObjectTable {
 			// Are we doing a GET sort on this column ?
 			$getSort = (isset($_GET[$this->_objectHandler->_itemname . '_' . 'sortsel']) && $_GET[$this->_objectHandler->_itemname . '_' . 'sortsel'] == $column->getKeyName()) || ($this->_sortsel == $column->getKeyName());
 			$order = isset($_GET[$this->_objectHandler->_itemname . '_' . 'ordersel']) ? $_GET[$this->_objectHandler->_itemname . '_' . 'ordersel'] : 'DESC';
-			if (!$this->_enableColumnsSorting) {
+
+			if (isset($_REQUEST['quicksearch_' . $this->_id]) && $_REQUEST['quicksearch_' . $this->_id] != '') {
+				$qs_param = "&quicksearch_".$this->_id."=".$_REQUEST['quicksearch_' . $this->_id];
+			}
+			if (!$this->_enableColumnsSorting || $column->_keyname == 'checked') {
 				$aColumn['caption'] =  $aColumn['caption'];
 			} elseif ($getSort) {
-				$aColumn['caption'] =  '<a href="' . $current_url . '?' . $this->_objectHandler->_itemname . '_' . 'sortsel=' . $column->getKeyName() . '&' . $this->_objectHandler->_itemname . '_' . 'ordersel=' . $orderArray[$order]['neworder'] . '&' . $new_query_string . '">' . $aColumn['caption'] . ' <img src="' . SMARTOBJECT_IMAGES_ACTIONS_URL . $orderArray[$order]['image'] . '" alt="ASC" /></a>';
+				$aColumn['caption'] =  '<a href="' . $current_url . '?' . $this->_objectHandler->_itemname . '_' . 'sortsel=' . $column->getKeyName() . '&' . $this->_objectHandler->_itemname . '_' . 'ordersel=' . $orderArray[$order]['neworder'].$qs_param . '&' . $new_query_string . '">' . $aColumn['caption'] . ' <img src="' . SMARTOBJECT_IMAGES_ACTIONS_URL . $orderArray[$order]['image'] . '" alt="ASC" /></a>';
 			} else {
-				$aColumn['caption'] =  '<a href="' . $current_url . '?' . $this->_objectHandler->_itemname . '_' . 'sortsel=' . $column->getKeyName() . '&' . $this->_objectHandler->_itemname . '_' . 'ordersel=ASC&' . $new_query_string . '">' . $aColumn['caption'] . '</a>';
+				$aColumn['caption'] =  '<a href="' . $current_url . '?' . $this->_objectHandler->_itemname . '_' . 'sortsel=' . $column->getKeyName() . '&' . $this->_objectHandler->_itemname . '_' . 'ordersel=ASC'.$qs_param.'&' . $new_query_string . '">' . $aColumn['caption'] . '</a>';
 			}
 			$aColumns[] = $aColumn;
 		}

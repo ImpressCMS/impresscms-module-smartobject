@@ -664,7 +664,7 @@ class SmartobjectForm extends XoopsThemeForm {
 			$smartyName = $this->getName();
 		}
 
-		$tpl->assign($smartyName, array('title' => $this->getTitle(), 'name' => $this->getName(), 'action' => $this->getAction(),  'method' => $this->getMethod(), 'extra' => 'onsubmit="return xoopsFormValidate_'.$this->getName().'();"'.$this->getExtra(), 'javascript' => $js, 'elements' => $elements));
+		$tpl->assign($smartyName, array('title' => $this->getTitle(), 'name' => $this->getName(), 'action' => $this->getAction(),  'method' => $this->getMethod(), 'extra' => 'onsubmit="return xoopsFormValidate_'.$this->getName().'(this);"'.$this->getExtra(), 'javascript' => $js, 'elements' => $elements));
 	}
 
 
@@ -735,7 +735,7 @@ function renderValidationJS( $withtags = true ) {
 		// Now, handle custom validation code
 		$elements = $this->getElements( true );
 		foreach ( $elements as $elt ) {
-			if ( method_exists( $elt, 'renderValidationJS' ) ) {
+			if ( method_exists( $elt, 'renderValidationJS') && strtolower(get_class($elt)) != 'xoopsformcheckbox') {
 				if ( $eltjs = $elt->renderValidationJS() ) {
 					$js .= $eltjs . "\n";
 				}

@@ -134,9 +134,9 @@
 		</tr>
 	<{/if}>
 </table>
-<{if $smartobject_withSelectedActions}> 
+<{if  $smartobject_actionButtons || $smartobject_withSelectedActions}> 
 	<input type='hidden' name='op' id='op' value='' />
-	<{if $smartobject_actionButtons || $smartobject_withSelectedActions}> 
+	<{if $smartobject_withSelectedActions}> 
 		<div style="padding: 5px;text-align: left; border-left: 1px solid silver; border-bottom: 1px solid silver; border-right: 1px solid silver;">
 		<{$smarty.const._CO_SOBJECT_WITH_SELECTED}>
 		<select name='selected_action'>
