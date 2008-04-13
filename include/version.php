@@ -10,6 +10,6 @@
  * @subpackage SmartObjectCore
  */
 
-define("SMARTOBJECT_VERSION", 0.7);
+define("SMARTOBJECT_VERSION", 1.0);
 
 ?>

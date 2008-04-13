@@ -5,6 +5,18 @@
 * Licence: GNU
 */
 
+What is SmartObject ?
+=====================
+
+SmartObject Framework to be used with new SmartModules such as SmartContent, SmartDynamic, SmartShop, etc...
+
+This framework allow easy management of any kind of objects. It easily manages all the common operations like adding, editing, deleting, listing, sorting, filtering objects.
+
+How to install SmartObject
+==========================
+
+SmartOvject is installed as a regular XOOPS/ImpressCMS module, which means you should copy the complete /smartobject folder into the /modules directory of your website. Then log in to your site as administrator, go to System Admin > Modules, look for the SmartObject icon in the list of uninstalled modules and click in the install icon. Follow the directions on the screen. Once the module is installed, you need to update the module to complete the installation. Go in System Admin > Modules > SmartObject and update the module. That's it !
+
 Implementing SmartObject Adsense feature on your site
 =====================================================
 
@@ -160,6 +172,19 @@ After these lines insert the following code :
 		 * End of Hack by marcan <INBOX>
 		 * Adding SmartObject Custom tag Feature
 		 */
+
+
+Support and Feedback
+====================
+
+We encourage you to visit The SmartFactory's Community Forums to get and offer support for this module. Feedback as also always appreciated. A dedicated forum for this module is available here:
+http://smartfactory.ca/modules/newbb/viewforum.php?forum=32
+
+SmartObject on ImpressCMS
+==========================
+
+SmartObject is fully functionnal on both XOOPS and ImpressCMS. Support for SmartObject on ImpressCMS is also offered on the SmartFactory's forum. We also encourage you to visit the ImpressCMS Community at http://community.impresscms.org for any questions or requests regarding ImpressCMS. 
+
 
 .:: The SmartFactory ::.
 .:: Open Source : smartfactory.ca ::.

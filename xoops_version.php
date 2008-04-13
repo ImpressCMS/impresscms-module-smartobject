@@ -16,7 +16,7 @@ $modversion['name'] = "SmartObject Framework";
 $modversion['version'] = 1.0;
 $modversion['description'] = "Framework providing functionnalities to SmartModules";
 $modversion['author'] = "The SmartFactory [www.smartfactory.ca]";
-$modversion['credits'] = "INBOX Solutions, Mithrandir, Sudhaker, Ampersand Design, Technigrafa";
+$modversion['credits'] = "INBOX International, Mithrandir, Sudhaker, Ampersand Design, Technigrafa";
 $modversion['help'] = "";
 $modversion['license'] = "GNU General Public License (GPL)";
 $modversion['official'] = 0;
@@ -29,7 +29,7 @@ $modversion['developer_website_name'] = "The SmartFactory";
 $modversion['developer_email'] = "info@smartfactory.ca";
 $modversion['status_version'] = "Final";
 $modversion['status'] = "Final";
-$modversion['date'] = "2007-09-21";
+$modversion['date'] = "2008-04-13";
 
 $modversion['people']['developers'][] = "marcan (Marc-André Lanciault)";
 $modversion['people']['developers'][] = "Mithrandir (Jan Keller Pedersen)";
