@@ -13,7 +13,7 @@ if (!defined("XOOPS_ROOT_PATH")) {
 }
 
 $modversion['name'] = "SmartObject Framework";
-$modversion['version'] = 1.0;
+$modversion['version'] = '1.0.1';
 $modversion['description'] = "Framework providing functionnalities to SmartModules";
 $modversion['author'] = "The SmartFactory [www.smartfactory.ca]";
 $modversion['credits'] = "INBOX International, Mithrandir, Sudhaker, Ampersand Design, Technigrafa";
@@ -29,7 +29,7 @@ $modversion['developer_website_name'] = "The SmartFactory";
 $modversion['developer_email'] = "info@smartfactory.ca";
 $modversion['status_version'] = "Final";
 $modversion['status'] = "Final";
-$modversion['date'] = "2008-04-13";
+$modversion['date'] = "unreleased";
 
 $modversion['people']['developers'][] = "marcan (Marc-André Lanciault)";
 $modversion['people']['developers'][] = "Mithrandir (Jan Keller Pedersen)";
@@ -159,6 +159,13 @@ $modversion['config'][$i]['formtype'] = 'yesno';
 $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = 0;
 
+$i++;
+$modversion['config'][$i]['name'] = 'enable_admin_footer';
+$modversion['config'][$i]['title'] = '_MI_SOBJECT_ADMFOOTER';
+$modversion['config'][$i]['description'] = '_MI_SOBJECT_ADMFOOTERDSC';
+$modversion['config'][$i]['formtype'] = 'yesno';
+$modversion['config'][$i]['valuetype'] = 'int';
+$modversion['config'][$i]['default'] = 1;
 
 /*
 $i++;

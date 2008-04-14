@@ -655,6 +655,8 @@ function smart_modFooter() {
 	if (!defined('_AM_SOBJECT_XOOPS_PRO')) {
 		define("_AM_SOBJECT_XOOPS_PRO", "Do you need help with this module ?<br />Do you need new features not yet availale ?");
 	}
+	$smartobject_config = smart_getModuleConfig('smartobject');
+	$tpl->assign('smartobject_enable_admin_footer', $smartobject_config['enable_admin_footer']);
 	$tpl->display(SMARTOBJECT_ROOT_PATH . 'templates/smartobject_admin_footer.html');
 }
 function smart_xoops_cp_footer() {
