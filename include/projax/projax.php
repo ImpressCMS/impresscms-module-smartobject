@@ -7,18 +7,22 @@
  * @package		Projax
  * @author		Vikas Patial
  * @copyright	Copyright (c) 2006, ngcoders.
- * @license		http://www.gnu.org/copyleft/gpl.html 
+ * @license		http://www.gnu.org/copyleft/gpl.html
  * @link		http://www.ngcoders.com
  * @since		Version 0.2
  * @filesource
  */
 
-include("classes/JavaScript.php");
-include("classes/Prototype.php");
-include("classes/Scriptaculous.php");
 
-// For $projax = new Projax();
-class Projax extends Scriptaculous{
+
+if(!class_exists('Projax')){
+	include("classes/JavaScript.php");
+	include("classes/Prototype.php");
+	include("classes/Scriptaculous.php");
+
+	// For $projax = new Projax();
+	class Projax extends Scriptaculous{
+	}
 }
 
 
