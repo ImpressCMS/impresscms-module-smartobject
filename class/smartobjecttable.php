@@ -28,13 +28,16 @@ class SmartObjectColumn {
 	var $_align;
 	var $_width;
 	var $_customMethodForValue;
+	var $_extraParams;
+	var $_sortable;
 	var $_customCaption;
 
-	function SmartObjectColumn($keyname, $align='left', $width=false, $customMethodForValue=false, $param = false, $customCaption = false) {
+	function SmartObjectColumn($keyname, $align='left', $width=false, $customMethodForValue=false, $param = false, $customCaption = false, $sortable = true) {
 		$this->_keyname = $keyname;
 		$this->_align = $align;
 		$this->_width = $width;
 		$this->_customMethodForValue = $customMethodForValue;
+		$this->_sortable = $sortable;
 		$this->_param = $param;
 		$this->_customCaption = $customCaption;
 	}
@@ -45,6 +48,10 @@ class SmartObjectColumn {
 
 	function getAlign() {
 		return $this->_align;
+	}
+
+	function isSortable() {
+		return $this->_sortable;
 	}
 
 	function getWidth() {
@@ -78,7 +85,7 @@ class SmartObjectTable {
 	var $_columns;
 	var $_criteria;
 	var $_actions;
-	var $_objects;
+	var $_objects=false;
 	var $_aObjects;
 	var $_custom_actions;
 	var $_sortsel;
@@ -254,6 +261,10 @@ class SmartObjectTable {
 
 	function setTableId($id) {
 		$this->_id = $id;
+	}
+
+	function setObjects($objects) {
+		$this->_objects = $objects;
 	}
 
 	function createTableRows() {
