@@ -23,5 +23,6 @@ define('_MI_SOBJECT_CURRMANDSC', '');
 
 define('_MI_SOBJECT_ADDTO_TITLE', 'Bloque de "Marcadores Sociales"');
 define('_MI_SOBJECT_ADDTO_DESC', '');
-
+define('_MI_SOBJECT_ADMFOOTER', 'Activar el pie de administración para los módulos de SmartFactory');
+define('_MI_SOBJECT_ADMFOOTERDSC', 'De forma predeterminada los módulos de SmartFactory muestran un pie de página en todas las pertenecientes a la administración de sus módulos que enlazan a los servicios profesionales disponibles para el módulo de que se trate. Puede desactivar esta característica mediante esta opción.');
 ?>
