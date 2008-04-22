@@ -36,12 +36,21 @@ class SmartobjectForm extends XoopsThemeForm {
 	var $targetObject = null;
 	var $form_fields = null;
 	var $_cancel_js_action=false;
+	var $_custom_button=false;
+var $_captcha=false;
+var $_form_name=false;
+var $_form_caption=false;
+var $_submit_button_caption=false;
 
 	function SmartobjectForm(&$target, $form_name, $form_caption, $form_action, $form_fields=null, $submit_button_caption = false, $cancel_js_action=false, $captcha=false) {
 
 		$this->targetObject =& $target;
 		$this->form_fields = $form_fields;
 		$this->_cancel_js_action = $cancel_js_action;
+		$this->_captcha= $captcha;
+		$this->_form_name= $form_name;
+		$this->_form_caption= $form_caption;
+		$this->_submit_button_caption= $submit_button_caption;
 
 		if (!isset($form_action)) {
 			$form_action = xoops_getenv('PHP_SELF');
@@ -64,6 +73,15 @@ class SmartobjectForm extends XoopsThemeForm {
 	function addCaptcha() {
 		include_once(SMARTOBJECT_ROOT_PATH . 'include/captcha/formcaptcha.php');
 		$this->addElement(new XoopsFormCaptcha(), true);
+	}
+
+	function addCustomButton($name, $caption, $onclick=false) {
+		$custom_button_array = array(
+						'name' => $name,
+						'caption' => $caption,
+						'onclick' => $onclick
+		);
+		$this->_custom_button[] = $custom_button_array;
 	}
 
 	/**
@@ -284,6 +302,19 @@ class SmartobjectForm extends XoopsThemeForm {
 		$butt_create->setExtra('onclick="this.form.elements.op.value=\'' . $form_name . '\'"');
 		$button_tray->addElement($butt_create);
 
+		//creating custom buttons
+		if ($this->_custom_button) {
+			foreach($this->_custom_button as $custom_button) {
+				$butt_custom = new XoopsFormButton('', $custom_button['name'], $custom_button['caption'], 'submit');
+				if ($custom_button['onclick']) {
+					$butt_custom->setExtra('onclick="' . $custom_button['onclick'] . '"');
+				}
+				$button_tray->addElement($butt_custom);
+				unset($butt_custom);
+			}
+		}
+
+		// creating the "cancel" button
 		$butt_cancel = new XoopsFormButton('', 'cancel_button', _CO_SOBJECT_CANCEL, 'button');
 		if ($this->_cancel_js_action) {
 			$butt_cancel->setExtra('onclick="' . $this->_cancel_js_action . '"');
@@ -298,8 +329,9 @@ class SmartobjectForm extends XoopsThemeForm {
 	function getControl($controlName, $key) {
 		switch ($controlName) {
 			case 'check':
+				include_once(SMARTOBJECT_ROOT_PATH."class/form/elements/smartformcheckelement.php");
 				$control = $this->targetObject->getControl($key);
-				$controlObj = new XoopsFormCheckBox($this->targetObject->vars[$key]['form_caption'], $key, $this->targetObject->getVar($key));
+				$controlObj = new SmartFormCheckElement($this->targetObject->vars[$key]['form_caption'], $key, $this->targetObject->getVar($key));
 				$controlObj->addOptionArray($control['options']);
 				return $controlObj;
 				break;
