@@ -21,7 +21,7 @@ define('_CO_SOBJECT_ADMIN_PAGE', ':: Admin page ::');
 define('_CO_SOBJECT_ALL', "All");
 define('_CO_SOBJECT_APPROVE', 'Approve');
 define('_CO_SOBJECT_AUTHOR_WORD', "The Author's Word");
-define('_CO_SOBJECT_BODY_DEFAULT', "Here is an interesting link I found on %s :%s");
+define('_CO_SOBJECT_BODY_DEFAULT', "Here is an interesting link I found on %s : %s");
 define('_CO_SOBJECT_CANCEL', 'Cancel');
 define('_CO_SOBJECT_CURRENCY_ISO4217', 'ISO 4217 Code');
 define('_CO_SOBJECT_CURRENCY_ISO4217_DSC', 'Official currency code. More info: <a href="http://en.wikipedia.org/wiki/ISO_4217" target="_blank">ISO 4217 on Wikipedia</a>');
