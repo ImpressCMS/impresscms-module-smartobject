@@ -685,7 +685,6 @@ var $_submit_button_caption=false;
 			$elements[$n]['section']  = strToLower(get_class($ele)) == strToLower('SmartFormSection');
 			$elements[$n]['section_close']  = get_class($ele) == 'SmartFormSectionClose';
 			$elements[$n]['hide'] = isset($this->targetObject->vars[$n]['hide']) ? $this->targetObject->vars[$n]['hide'] : false;
-
 			if ($ele->getDescription() != '') {
 			    $elements[$n]['description']  = $ele->getDescription();
 			}
@@ -736,7 +735,7 @@ function renderValidationJS( $withtags = true ) {
 				if (hasSelections == false) {
 					window.alert(\"{$eltmsg}\"); myform['{$eltname}[]'].options[0].focus(); return false; }\n";
 
-			}elseif (strtolower(get_class($elt)) == 'xoopsformcheckbox') {
+			}elseif (strtolower(get_class($elt)) == 'xoopsformcheckbox' || strtolower(get_class($elt)) == 'smartformcheckelement' ) {
 				$js .= "var hasSelections = false;";
 				//sometimes, there is an implicit '[]', sometimes not
 				if(strpos($eltname, '[') === false){

@@ -242,13 +242,13 @@ class SmartObjectTable {
 	function setSortOrder() {
 		$this->_sortsel = isset($_GET[$this->_objectHandler->_itemname . '_' . 'sortsel']) ? $_GET[$this->_objectHandler->_itemname . '_' . 'sortsel'] : $this->getDefaultSort();
 		//$this->_sortsel = isset($_POST['sortsel']) ? $_POST['sortsel'] : $this->_sortsel;
-
 		smart_setCookieVar($_SERVER['PHP_SELF'] . '_' . $this->_id . '_sortsel', $this->_sortsel);
 		$fieldsForSorting = $this->_tempObject->getFieldsForSorting($this->_sortsel);
 
-		if (isset($this->_tempObject->vars[$this->_sortsel]['itemName'])) {
+		if (isset($this->_tempObject->vars[$this->_sortsel]['itemName']) && $this->_tempObject->vars[$this->_sortsel]['itemName']) {
 			$this->_criteria->setSort($this->_tempObject->vars[$this->_sortsel]['itemName'] . "." . $this->_sortsel);
 		} else {
+
 			$this->_criteria->setSort($this->_objectHandler->_itemname . "." . $this->_sortsel);
 		}
 
@@ -273,7 +273,6 @@ class SmartObjectTable {
 		$doWeHaveActions = false;
 
 		$objectclass = 'odd';
-
 		if (count($this->_objects) > 0) {
 			foreach ($this->_objects as $object) {
 

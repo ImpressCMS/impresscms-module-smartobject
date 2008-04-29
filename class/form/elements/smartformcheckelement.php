@@ -42,7 +42,7 @@ class SmartFormCheckElement extends XoopsFormCheckBox {
 			if (hasSelections == false) {
 				window.alert(\"{$eltmsg}\"); myform['{$eltname}[]'][0].focus(); return false; }\n";
 		}else{
-			$js .= "for(var i = 0; i < myform['{$eltname}'].length; i++){
+			$js .= "for(var i = 0; i < myform['".$eltname."'].length; i++){
 				if (myform['{$eltname}'][i].checked) {
 					hasSelections = true;
 				}
