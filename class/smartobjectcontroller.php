@@ -94,7 +94,7 @@ class SmartObjectController {
 	    			if (is_array($_POST[$key]) && isset($_POST[$key]['date']))  {
 	    				$value = strtotime($_POST[$key]['date']) + $_POST[$key]['time'];
 	    			}else {
-	    				$value = intval($_POST[$key]);
+	    				$value = strtotime(($_POST[$key]));
 	    				$smartObj->setVar($key, $value);
 	     			}
     			break;
