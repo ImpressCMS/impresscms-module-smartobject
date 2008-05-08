@@ -665,7 +665,7 @@ class SmartObjectTable {
 			if (isset($_REQUEST['quicksearch_' . $this->_id]) && $_REQUEST['quicksearch_' . $this->_id] != '') {
 				$qs_param = "&quicksearch_".$this->_id."=".$_REQUEST['quicksearch_' . $this->_id];
 			}
-			if (!$this->_enableColumnsSorting || $column->_keyname == 'checked') {
+			if (!$this->_enableColumnsSorting || $column->_keyname == 'checked' || !$column->isSortable()) {
 				$aColumn['caption'] =  $aColumn['caption'];
 			} elseif ($getSort) {
 				$aColumn['caption'] =  '<a href="' . $current_url . '?' . $this->_objectHandler->_itemname . '_' . 'sortsel=' . $column->getKeyName() . '&' . $this->_objectHandler->_itemname . '_' . 'ordersel=' . $orderArray[$order]['neworder'].$qs_param . '&' . $new_query_string . '">' . $aColumn['caption'] . ' <img src="' . SMARTOBJECT_IMAGES_ACTIONS_URL . $orderArray[$order]['image'] . '" alt="ASC" /></a>';
