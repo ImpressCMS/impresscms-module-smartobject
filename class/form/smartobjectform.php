@@ -401,6 +401,10 @@ var $_submit_button_caption=false;
 				include_once(SMARTOBJECT_ROOT_PATH."class/form/elements/smartformrichfileelement.php");
 				return new SmartFormRichFileElement($this->targetObject->vars[$key]['form_caption'], $key, $this->targetObject->getFileObj($key));
 				break;
+			case 'section':
+				include_once(SMARTOBJECT_ROOT_PATH."class/form/elements/smartformsection.php");
+				return new SmartFormSection($key, $this->targetObject->vars[$key]['form_caption']);
+				break;
 
 
 			default:
