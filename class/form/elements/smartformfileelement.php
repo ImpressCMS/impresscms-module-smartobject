@@ -17,7 +17,7 @@ class SmartFormFileElement extends XoopsFormFile {
 	function render(){
 		$ret = '';
 		if($this->object->getVar($this->key) != '' ){
-       		$ret .=	"<div>"._CO_SOBJECT_CURRENT_FILE."<a href='" . $this->object->getUploadDir().$this->object->getVar($this->key) . "' target='_blank' >". $this->object->getVar($this->key)."</a></div>" ;
+       		$ret .=	"<div>"._CO_SOBJECT_CURRENT_FILE.$this->object->getVar($this->key) ."</div>" ;
         }
 
 
