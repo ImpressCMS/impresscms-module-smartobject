@@ -571,29 +571,26 @@ function smart_getCookieVar($name, $default = '') {
 		return $default;
 	}
 }
-function smart_getCurrentUrls() {
-	static $urls;
 
-	if (!isset($urls)) {
-		$http = ((strpos(XOOPS_URL, "https://")) === false) ? ("http://") : ("https://");
-		$phpself = $_SERVER['PHP_SELF'];
-		$httphost = $_SERVER['HTTP_HOST'];
-		$querystring = $_SERVER['QUERY_STRING'];
-		if ($querystring != '') {
-			$querystring = '?' . $querystring;
-		}
-		$currenturl = $http . $httphost . $phpself . $querystring;
-		$urls = array ();
-		$urls['http'] = $http;
-		$urls['httphost'] = $httphost;
-		$urls['phpself'] = $phpself;
-		$urls['querystring'] = $querystring;
-		$urls['full_phpself'] = $http . $httphost . $phpself;
-		$urls['full'] = $currenturl;
-		$urls['isHomePage'] = (XOOPS_URL . "/index.php") == ($http . $httphost . $phpself);
-	}
-	return $urls;
+$urls = array();
+$http = ((strpos(XOOPS_URL, "https://")) === false) ? ("http://") : ("https://");
+$phpself = $_SERVER['PHP_SELF'];
+$httphost = $_SERVER['HTTP_HOST'];
+$querystring = $_SERVER['QUERY_STRING'];
+if ($querystring != '') {
+	$querystring = '?' . $querystring;
 }
+$currenturl = $http . $httphost . $phpself . $querystring;
+$urls = array ();
+$urls['http'] = $http;
+$urls['httphost'] = $httphost;
+$urls['phpself'] = $phpself;
+$urls['querystring'] = $querystring;
+$urls['full_phpself'] = $http . $httphost . $phpself;
+$urls['full'] = $currenturl;
+$urls['isHomePage'] = (XOOPS_URL . "/index.php") == ($http . $httphost . $phpself);
+$xoopsTpl->assign('icms_current_urls');
+
 function smart_getCurrentPage() {
 	$urls = smart_getCurrentUrls();
 	return $urls['full'];
