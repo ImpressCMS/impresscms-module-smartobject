@@ -50,8 +50,8 @@ $modversion['warning'] = _CO_SOBJECT_WARNING_BETA;
 
 $modversion['demo_site_url'] = "";
 $modversion['demo_site_name'] = "";
-$modversion['support_site_url'] = "";
-$modversion['support_site_name'] = "";
+$modversion['support_site_url'] = "http://smartfactory.ca";
+$modversion['support_site_name'] = "The SmartFactory";
 $modversion['submit_bug'] = "";
 $modversion['submit_feature'] = "";
 
