@@ -99,8 +99,9 @@ class SmartObjectController {
 	    				if(!$value){
 	    					$value = intval($_POST[$key]);
 	    				}
+	    			}	
 	    			$smartObj->setVar($key, $value);
-	     			}
+	     			
     			break;
 
     			default:
