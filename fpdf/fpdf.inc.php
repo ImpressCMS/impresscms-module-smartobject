@@ -29,7 +29,7 @@
 // Project: The XOOPS Project                                                //
 // ------------------------------------------------------------------------- //
 
-define('SSECTION_FPDF_PATH',XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->getVar('dirname').'/fpdf');
+define('SSECTION_FPDF_PATH',XOOPS_ROOT_PATH.'/modules/smartobject/fpdf');
 define('FPDF_FONTPATH',SSECTION_FPDF_PATH.'/font/');
 
 require SSECTION_FPDF_PATH.'/gif.php';
