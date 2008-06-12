@@ -1,6 +1,6 @@
 <?php
 //============================================================+
-// File name   : fa.php 
+// File name   : fr.php 
 // Begin       : 2004-03-03 
 // Last Update : 2008-01-08 
 // 
@@ -29,8 +29,8 @@
  * @license http://www.gnu.org/copyleft/lesser.html LGPL
  * @since 2004-03-03
  */
- /**
-* Translation of tcpdf for PERSIAN users
+  /**
+* Translation of tcpdf for FRENCH users
 *
 * @copyright	      http://www.impresscms.org/ The ImpressCMS Project 
 * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License (GPL)
@@ -40,18 +40,18 @@
 * @version		$Id$
 */
 
-// فارسی (PERSIAN)
+// Français (FRENCH)
 
 $l = Array();
 
 // PAGE META DESCRIPTORS --------------------------------------
 
 $l['a_meta_charset'] = "UTF-8";
-$l['a_meta_dir'] = "rtl";
-$l['a_meta_language'] = "fa";
+$l['a_meta_dir'] = "ltr";
+$l['a_meta_language'] = "fr";
 
 // TRANSLATIONS --------------------------------------
-$l['w_page'] = "صفحه";
+$l['w_page'] = "Page";
 
 //============================================================+
 // END OF FILE                                                 
