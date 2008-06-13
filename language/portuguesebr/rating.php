@@ -11,12 +11,12 @@ if (!defined("XOOPS_ROOT_PATH")) {
  	die("Caminho para o raiz do site não está definido");
 }
 
-define('_SOBJECT_RATING_RATE', 'Rate it !');
-define('_SOBJECT_RATING_DUPLICATE_ENTRY', 'Sorry ! You have already rated this ! You cannot rate something twice.');
-define('_SOBJECT_RATING_ERROR', 'An error occured, your rating could not be stored.');
-define('_SOBJECT_RATING_SUCCESS', 'Your rating has been stored. Thank for your contribution !');
-define('_SOBJECT_RATING_RATE_THIS', 'Was this usefull ? (1 being <i>Not usefull</i> and 5 being <i>Very usefull</i>)');
-define('_SOBJECT_RATING_ALREADY_RATED', 'Your rate: ');
-define('_SOBJECT_RATING_VOTERS_TOTAL', 'Voters total: ');
-define('_SOBJECT_RATING_AVERAGE', 'Average: ');
+define('_SOBJECT_RATING_RATE', 'Avalie !');
+define('_SOBJECT_RATING_DUPLICATE_ENTRY', 'Desculpe! Você já avaliou este ítem! Você não pode avaliar mais de uma vez.');
+define('_SOBJECT_RATING_ERROR', 'Ocorreu um erro, a sua classificação não poderia ser armazenada.');
+define('_SOBJECT_RATING_SUCCESS', 'Sua classificação está sendo armazenada. Obrigado pela sua contribuição !');
+define('_SOBJECT_RATING_RATE_THIS', 'Isso foi útil ? (1 será <i>Não útil</i> e 5 será <i>Muito útil</i>)');
+define('_SOBJECT_RATING_ALREADY_RATED', 'Seu voto: ');
+define('_SOBJECT_RATING_VOTERS_TOTAL', 'Total de votos: ');
+define('_SOBJECT_RATING_AVERAGE', 'Média: ');
 ?>
