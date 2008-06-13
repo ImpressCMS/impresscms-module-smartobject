@@ -1,14 +1,15 @@
 <?php
 
 /**
-* $Id: common.php 1778 2008-04-24 17:48:56Z fx2024 $
-* Module: SmartContent
+* $Id: common.php 1778 2008-04-24 17:48:56Z GibaPhp $
+* Module: SmartObject
 * Author: The SmartFactory <www.smartfactory.ca>
+* Translation: Portuguesebr - GibaPhp
 * Licence: GNU
 */
 
 if (!defined("XOOPS_ROOT_PATH")) {
- 	die("XOOPS root path not defined");
+ 	die("Caminho para o raiz do site não está definido");
 }
 
 define('_CO_OBJ_ALL', "All"); // deprecated

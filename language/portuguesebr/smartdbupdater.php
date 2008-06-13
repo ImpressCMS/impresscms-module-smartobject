@@ -1,13 +1,14 @@
 <?php
 
 /**
-* $Id: smartdbupdater.php 159 2007-12-17 16:44:05Z malanciault $
-* Module: SmartContent
+* $Id: smartdbupdater.php 159 2007-12-17 16:44:05Z GibaPhp $
+* Module: SmartObject
 * Author: The SmartFactory <www.smartfactory.ca>
+* Translation: Portuguesebr - GibaPhp
 * Licence: GNU
 */
 if (!defined("XOOPS_ROOT_PATH")) {
- 	die("XOOPS root path not defined");
+ 	die("Caminho para o raiz do site não está definido");
 }
 
 define("_SDU_IMPORT", "Import");

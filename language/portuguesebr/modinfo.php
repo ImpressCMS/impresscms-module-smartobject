@@ -1,14 +1,15 @@
 <?php
 
 /**
-* $Id: modinfo.php 1593 2008-04-14 14:39:53Z malanciault $
-* Module: SmartContent
+* $Id: modinfo.php 1593 2008-04-14 14:39:53Z GibaPhp $
+* Module: SmartObject
 * Author: The SmartFactory <www.smartfactory.ca>
+* Translation: Portuguesebr - GibaPhp
 * Licence: GNU
 */
 
 if (!defined("XOOPS_ROOT_PATH")) {
- 	die("XOOPS root path not defined");
+ 	die("Caminho para o raiz do site não está definido");
 }
 
 define('_MI_SOBJECT_INDEX', 'Index');
