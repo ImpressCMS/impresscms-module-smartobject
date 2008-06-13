@@ -8,34 +8,34 @@
 * Licence: GNU
 */
 if (!defined("XOOPS_ROOT_PATH")) {
- 	die("Caminho para o raiz do site n�o est� definido");
+ 	die("Caminho para o raiz do site não está definido");
 }
 
-define('_AM_SOBJECT_CUSTOMTAGS', 'Custom tags');
-define('_AM_SOBJECT_CUSTOMTAGS_DSC', 'Here is a list of the custom tags available in the system.');
-define('_AM_SOBJECT_CUSTOMTAG', 'Custom tag');
-define('_AM_SOBJECT_CUSTOMTAGS_CREATE', 'Create a custom tag');
-define('_AM_SOBJECT_CUSTOMTAG_CREATE', 'Create a custom tag');
-define('_AM_SOBJECT_CUSTOMTAGS_CREATE_INFO', 'Simply fill this form in order to add a custom tag.');
-define('_AM_SOBJECT_CUSTOMTAG_DELETE_CONFIRM', 'Do you really want to delete this custom tag from the system ?');
-define('_AM_SOBJECT_CUSTOMTAGS_EDIT', 'Edit a custom tag');
-define('_AM_SOBJECT_CUSTOMTAGS_EDIT_INFO', 'Use this form to edit the information of this custom tag.');
-define('_AM_SOBJECT_CUSTOMTAGS_INFO', 'Custom tag information');
-define('_AM_SOBJECT_CUSTOMTAG_NOT_FOUND', 'The selected custom tag was not found.');
+define('_AM_SOBJECT_CUSTOMTAGS', 'Personalizar Tags');
+define('_AM_SOBJECT_CUSTOMTAGS_DSC', 'Aqui está uma lista de tags personalizadas disponíveis no sistema.');
+define('_AM_SOBJECT_CUSTOMTAG', 'Pernonalizar tag');
+define('_AM_SOBJECT_CUSTOMTAGS_CREATE', 'Criar uma tag');
+define('_AM_SOBJECT_CUSTOMTAG_CREATE', 'Criar uma Tag Personalizada');
+define('_AM_SOBJECT_CUSTOMTAGS_CREATE_INFO', 'Basta preencher este formulário para adicionar uma tag personalizada.');
+define('_AM_SOBJECT_CUSTOMTAG_DELETE_CONFIRM', 'Você realmente deseja excluir esta tag personalizada do sistema ?');
+define('_AM_SOBJECT_CUSTOMTAGS_EDIT', 'Editar uma tag personalizada');
+define('_AM_SOBJECT_CUSTOMTAGS_EDIT_INFO', 'Use este formulário para editar as informações desta tag personalizada.');
+define('_AM_SOBJECT_CUSTOMTAGS_INFO', 'Informação Sobre Tags Personalizadas');
+define('_AM_SOBJECT_CUSTOMTAG_NOT_FOUND', 'A tag personalizada selecionada não foi encontrada.');
 
-define('_AM_SOBJECT_CUSTOMTAGS_CREATED', 'The custom tag was successfully created.');
-define('_AM_SOBJECT_CUSTOMTAGS_MODIFIED', 'The custom tag was successfully modified.');
+define('_AM_SOBJECT_CUSTOMTAGS_CREATED', 'Uma tag personalizada foi criada com êxito.');
+define('_AM_SOBJECT_CUSTOMTAGS_MODIFIED', 'A tag personalizada foi modificada com êxito.');
 
-define('_CO_SOBJECT_CUSTOMTAG_NAME', 'Name');
+define('_CO_SOBJECT_CUSTOMTAG_NAME', 'Nome');
 define('_CO_SOBJECT_CUSTOMTAG_NAME_DSC', '');
-define('_CO_SOBJECT_CUSTOMTAG_DESCRIPTION', 'Description');
+define('_CO_SOBJECT_CUSTOMTAG_DESCRIPTION', 'Descrição');
 define('_CO_SOBJECT_CUSTOMTAG_DESCRIPTION_DSC', '');
-define('_CO_SOBJECT_CUSTOMTAG_CONTENT', 'Content');
+define('_CO_SOBJECT_CUSTOMTAG_CONTENT', 'Conteúdo');
 define('_CO_SOBJECT_CUSTOMTAG_CONTENT_DSC', '');
-define('_CO_SOBJECT_CUSTOMTAG_LANGUAGE', 'Language');
+define('_CO_SOBJECT_CUSTOMTAG_LANGUAGE', 'Idioma');
 define('_CO_SOBJECT_CUSTOMTAG_LANGUAGE_DSC', '');
-define('_CO_SOBJECT_CUSTOMTAG_PERMISSION_VIEW', 'View permission');
-define('_CO_SOBJECT_CUSTOMTAG_PERMISSION_VIEW_DSC', 'Only the selected groups will be able to see the content of this tag');
+define('_CO_SOBJECT_CUSTOMTAG_PERMISSION_VIEW', 'Ver Permissões');
+define('_CO_SOBJECT_CUSTOMTAG_PERMISSION_VIEW_DSC', 'Apenas os grupos selecionados serão capazes de ver o conteúdo desta tag');
 
-define('_CO_SOBJECT_CUSTOMTAG_CLONE', 'Clone');
+define('_CO_SOBJECT_CUSTOMTAG_CLONE', 'Clonar');
 ?>

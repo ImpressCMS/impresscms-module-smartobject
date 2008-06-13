@@ -8,7 +8,7 @@
 * Licence: GNU
 */
 if (!defined("XOOPS_ROOT_PATH")) {
- 	die("Caminho para o raiz do site n„o est· definido");
+ 	die("Caminho para o raiz do site n√£o est√° definido");
 }
 
 define('_AM_SOBJECT_ABOUT', 'About');

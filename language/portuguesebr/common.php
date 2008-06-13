@@ -9,7 +9,7 @@
 */
 
 if (!defined("XOOPS_ROOT_PATH")) {
- 	die("Caminho para o raiz do site n„o est· definido");
+ 	die("Caminho para o raiz do site n√£o est√° definido");
 }
 
 define('_CO_OBJ_ALL', "All"); // deprecated
@@ -167,7 +167,7 @@ define('_CO_SOBJECT_UPDATE_ALL', "Update all");
 define('_CO_SOBJECT_NO_RECORDS_TO_UPDATE', "No records to update");
 define('_CO_SOBJECT_NO_RECORDS_UPDATED', "Objects successfully updated !");
 
-define('_CO_SOBJECT_CLONE', "Clone this object");
+define('_CO_SOBJECT_CLONE', "Clonar este Objeto");
 
 define('_AM_SCONTENT_CATEGORY_VIEW', "Category view");
 
