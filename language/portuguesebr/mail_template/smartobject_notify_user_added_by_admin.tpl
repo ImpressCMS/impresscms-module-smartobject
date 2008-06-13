@@ -1,18 +1,18 @@
-Hello {NAME},
+Olá {NAME},
 
-We have created an account for you at {SITEURL} so you can access some features reserved to our members.
+Precisamos criar uma conta para você no {SITEURL} assim você pode acessar alguns recursos reservados para os nossos membros.
 
-You can now login on {SITEURL} by using the following information :
+Você pode agora login no {SITEURL} usando as seguintes informações :
 
-Username : {UNAME}
-Password : {XOOPS_USER_PASSWORD}
+Usuário..: {UNAME}
+Senha....: {XOOPS_USER_PASSWORD}
 
-Once you are logged in, you can easily change your password by editing your account settings.
+Uma vez conectado, você pode facilmente alterar sua senha, editando as configurações da sua conta.
 
-Should you have any question, feel free to contact us at any time.
+Caso tenha alguma pergunta, sinta-se livre para entrar em contato conosco a qualquer momento.
 
------------
-Best Regards
+--------------
+Atenciosamente
 {SITENAME}
 ({SITEURL})
 {ADMINMAIL}

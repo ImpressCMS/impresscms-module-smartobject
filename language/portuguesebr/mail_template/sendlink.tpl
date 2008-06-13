@@ -1,12 +1,9 @@
-Hi {TO_NAME}
+Olá {TO_NAME}
 
-{FROM_NAME} sent you a message from {X_SITENAME}. Here is the message :
+{FROM_NAME} enviou-lhe uma mensagem do {X_SITENAME}. Aqui está a mensagem:
 
 {MESSAGE}
 
 -----------
 {X_SITENAME}
 {X_SITEURL}
-
-
-
