@@ -48,5 +48,4 @@ define('_CO_SOBJECT_ADSENSE_TEXT_COLOR', 'Text color');
 define('_CO_SOBJECT_ADSENSE_TEXT_COLOR_DSC', '');
 define('_CO_SOBJECT_ADSENSE_URL_COLOR', 'URL color');
 define('_CO_SOBJECT_ADSENSE_URL_COLOR_DSC', '');
-
 ?>

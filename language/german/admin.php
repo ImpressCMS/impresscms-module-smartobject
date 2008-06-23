@@ -10,7 +10,7 @@ if (!defined("XOOPS_ROOT_PATH")) {
  	die("XOOPS root path not defined");
 }
 
-define('_AM_SOBJECT_ABOUT', '&Uuml;ber');
+define('_AM_SOBJECT_ABOUT', 'Über');
 define('_AM_SOBJECT_AUTHOR_INFO', 'Contributors information');
 define('_AM_SOBJECT_BY', 'von');
 define('_AM_SOBJECT_DEVELOPER_CONTRIBUTOR', 'Contributors');
@@ -19,10 +19,10 @@ define('_AM_SOBJECT_DEVELOPER_LEAD', 'Programmierer');
 define('_AM_SOBJECT_DEVELOPER_WEBSITE', 'Webseite');
 define('_AM_SOBJECT_EDITING', 'Editing');
 define('_AM_SOBJECT_INDEX', 'Index');
-define('_AM_SOBJECT_LINK_NOT_FOUND', 'Der gew&auml;hlte Link wurde nicht gefunden.');
+define('_AM_SOBJECT_LINK_NOT_FOUND', 'Der gewählte Link wurde nicht gefunden.');
 define('_AM_SOBJECT_MODULE_BUG', 'Einen Fehler von diesem Modul berichten');
 define('_AM_SOBJECT_MODULE_DEMO', 'Demo Seite');
-define('_AM_SOBJECT_MODULE_FEATURE', 'Fordere ein neues Feature f&uuml;r das Modul an');
+define('_AM_SOBJECT_MODULE_FEATURE', 'Fordere ein neues Feature für das Modul an');
 define('_AM_SOBJECT_MODULE_INFO', 'Module Development details');
 define('_AM_SOBJECT_MODULE_RELEASE_DATE', 'Release date');
 define('_AM_SOBJECT_MODULE_STATUS', 'Status');
@@ -43,25 +43,25 @@ define('_AM_SOBJECT_TAG_DELETE_CONFIRM', 'Do you really want to delete this tag 
 define('_AM_SOBJECT_TAG_EDIT', 'Tag bearbeiten');
 define('_AM_SOBJECT_TAG_EDIT_INFO', 'Use this form to edit the information of this tag.');
 define('_AM_SOBJECT_TAG_INFO', 'Tag Informationen');
-define('_AM_SOBJECT_TAG_NOT_FOUND', 'Der gew&auml;hlte Tag wurde nicht gefunden.');
+define('_AM_SOBJECT_TAG_NOT_FOUND', 'Der gewählte Tag wurde nicht gefunden.');
 define('_AM_SOBJECT_TAGS', 'Tags');
 define('_AM_SOBJECT_TAGS_DISPLAY', 'Zeige Tag');
-define('_AM_SOBJECT_TAGS_DISPLAY_INFO', 'Hier sind alle Informationen &uuml;ber diesen Tag.');
-define('_AM_SOBJECT_TAGS_INFO', 'Hier ist eine Liste der verf&uuml;gbaren Tags');
+define('_AM_SOBJECT_TAGS_DISPLAY_INFO', 'Hier sind alle Informationen über diesen Tag.');
+define('_AM_SOBJECT_TAGS_INFO', 'Hier ist eine Liste der verfügbaren Tags');
 define('_AM_SOBJECT_TAGS_VIEW', 'Tag ansehen');
 
 define('_AM_SOBJECT_PEOPLE_DEVELOPERS', 'Entwickler');
 define('_AM_SOBJECT_PEOPLE_TESTERS', 'Tester');
 define('_AM_SOBJECT_PEOPLE_DOCUMENTERS', 'Documenters');
-define('_AM_SOBJECT_PEOPLE_TRANSLATERS', '&Uuml;bersetzer');
+define('_AM_SOBJECT_PEOPLE_TRANSLATERS', 'Übersetzer');
 define('_AM_SOBJECT_PEOPLE_OTHER', 'Other contributors');
 
 define('_AM_SOBJECT_RATINGS', 'Bewertungen');
-define('_AM_SOBJECT_RATINGS_DSC', 'Hier ist eine Liste der hinzugef&uuml;gten Bewertungen im System.');
+define('_AM_SOBJECT_RATINGS_DSC', 'Hier ist eine Liste der hinzugefügten Bewertungen im System.');
 define('_AM_SOBJECT_RATING', 'Bewertung');
-define('_AM_SOBJECT_RATINGS_CREATE', 'Bewertungen hinzuf&uuml;gen');
-define('_AM_SOBJECT_RATING_CREATE', 'Bewertung hinzuf&uuml;gen');
-define('_AM_SOBJECT_RATINGS_CREATE_INFO', 'F&uuml;llen Sie einfach das folgende Formular aus.');
+define('_AM_SOBJECT_RATINGS_CREATE', 'Bewertungen hinzufügen');
+define('_AM_SOBJECT_RATING_CREATE', 'Bewertung hinzufügen');
+define('_AM_SOBJECT_RATINGS_CREATE_INFO', 'Füllen Sie einfach das folgende Formular aus.');
 define('_AM_SOBJECT_RATING_DELETE_CONFIRM', 'Soll die Bewertung wirklich gelöscht werden?');
 define('_AM_SOBJECT_RATINGS_EDIT', 'Bewertung bearbeiten');
 define('_AM_SOBJECT_RATINGS_EDIT_INFO', 'Formular ausfüllen für die Bewertung.');

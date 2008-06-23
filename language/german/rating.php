@@ -10,12 +10,12 @@ if (!defined("XOOPS_ROOT_PATH")) {
  	die("XOOPS root path not defined");
 }
 
-define('_SOBJECT_RATING_RATE', 'Rate it !');
-define('_SOBJECT_RATING_DUPLICATE_ENTRY', 'Sorry ! You have already rated this ! You cannot rate something twice.');
-define('_SOBJECT_RATING_ERROR', 'An error occured, your rating could not be stored.');
-define('_SOBJECT_RATING_SUCCESS', 'Your rating has been stored. Thank for your contribution !');
-define('_SOBJECT_RATING_RATE_THIS', 'Was this usefull ? (1 being <i>Not usefull</i> and 5 being <i>Very usefull</i>)');
-define('_SOBJECT_RATING_ALREADY_RATED', 'Your rate: ');
-define('_SOBJECT_RATING_VOTERS_TOTAL', 'Voters total: ');
-define('_SOBJECT_RATING_AVERAGE', 'Average: ');
+define('_SOBJECT_RATING_RATE', 'Bewerten!');
+define('_SOBJECT_RATING_DUPLICATE_ENTRY', 'Entschuldigung! Sie haben das bereits bewertet. Sie können keine zwei Bewertungen abgeben.');
+define('_SOBJECT_RATING_ERROR', 'Es ist ein Fehler aufgetreten, Ihre Bewertung konnte nicht angenommen werden.');
+define('_SOBJECT_RATING_SUCCESS', 'Ihre Bewertung wurde entgegen genommen, vielen Dank für Ihren Beitrag!');
+define('_SOBJECT_RATING_RATE_THIS', 'Ist der Beitrag nützlich? (1 ist <i>Nicht nützlich</i> und 5 ist <i>Sehr nützlich</i>)');
+define('_SOBJECT_RATING_ALREADY_RATED', 'Ihre Bewertung: ');
+define('_SOBJECT_RATING_VOTERS_TOTAL', 'Bewertung gesamt: ');
+define('_SOBJECT_RATING_AVERAGE', 'Durchschnitt: ');
 ?>

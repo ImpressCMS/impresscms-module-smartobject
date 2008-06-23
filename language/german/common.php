@@ -11,18 +11,18 @@ if (!defined("XOOPS_ROOT_PATH")) {
  	die("XOOPS root path not defined");
 }
 
-define('_CO_OBJ_ALL', "All"); // deprecated
+define('_CO_OBJ_ALL', "Alls"); // deprecated
 define('_CO_OBJ_FILTER', "Filter");
 define('_CO_OBJ_NONE', "None");
-define('_CO_OBJ_SHOW_ONLY', 'Show only');
+define('_CO_OBJ_SHOW_ONLY', 'Zeige');
 define('_CO_OBJ_SORT_BY', "Sort by");
 define('_CO_SOBJECT_ACTIONS', 'Actions');
 define('_CO_SOBJECT_ADMIN_PAGE', ':: Admin page ::');
-define('_CO_SOBJECT_ALL', "All");
+define('_CO_SOBJECT_ALL', "Alle");
 define('_CO_SOBJECT_APPROVE', 'Approve');
 define('_CO_SOBJECT_AUTHOR_WORD', "The Author's Word");
 define('_CO_SOBJECT_BODY_DEFAULT', "Here is an interesting link I found on %s : %s");
-define('_CO_SOBJECT_CANCEL', 'Cancel');
+define('_CO_SOBJECT_CANCEL', 'Abbrechen');
 define('_CO_SOBJECT_CURRENCY_ISO4217', 'ISO 4217 Code');
 define('_CO_SOBJECT_CURRENCY_ISO4217_DSC', 'Official currency code. More info: <a href="http://en.wikipedia.org/wiki/ISO_4217" target="_blank">ISO 4217 on Wikipedia</a>');
 define('_CO_SOBJECT_CURRENCY_NAME', 'Name');
@@ -191,5 +191,4 @@ define('_CO_SOBJECT_URLLINK_BLANK', "new window");
 define('_CO_SOBJECT_ANY', "Any");
 define('_CO_SOBJECT_EDITOR', "Prefered text editor");
 define('_CO_SOBJECT_WITH_SELECTED', "With selected: ");
-
 ?>
