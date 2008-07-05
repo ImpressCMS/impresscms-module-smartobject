@@ -29,16 +29,16 @@ $modversion['developer_website_name'] = "The SmartFactory";
 $modversion['developer_email'] = "info@smartfactory.ca";
 $modversion['status_version'] = "Final";
 $modversion['status'] = "Final";
-$modversion['date'] = "unreleased";
+$modversion['date'] = "2008-07-05";
 
-$modversion['people']['developers'][] = "marcan (Marc-André Lanciault)";
+$modversion['people']['developers'][] = "marcan (Marc-AndrÃ© Lanciault)";
 $modversion['people']['developers'][] = "Mithrandir (Jan Keller Pedersen)";
 $modversion['people']['developers'][] = "Sudhaker (Sudhaker Raj)";
 
 $modversion['people']['testers'][] = "Andy Cleff";
-$modversion['people']['testers'][] = "Félix Tousignant";
-$modversion['people']['testers'][] = "Frédéric Tousignant";
-$modversion['people']['testers'][] = "Pier-André Roy";
+$modversion['people']['testers'][] = "FÃ©lix Tousignant";
+$modversion['people']['testers'][] = "FrÃ©dÃ©ric Tousignant";
+$modversion['people']['testers'][] = "Pier-AndrÃ© Roy";
 
 //$modversion['people']['translators'][] = "translator 1";
 
@@ -50,8 +50,8 @@ $modversion['warning'] = _CO_SOBJECT_WARNING_BETA;
 
 $modversion['demo_site_url'] = "";
 $modversion['demo_site_name'] = "";
-$modversion['support_site_url'] = "http://smartfactory.ca";
-$modversion['support_site_name'] = "The SmartFactory";
+$modversion['support_site_url'] = "http://community.impresscms.org/modules/newbb/viewforum.php?forum=71";
+$modversion['support_site_name'] = "The ImpressCMS Community";
 $modversion['submit_bug'] = "";
 $modversion['submit_feature'] = "";
 

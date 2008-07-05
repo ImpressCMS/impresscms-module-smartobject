@@ -15,7 +15,7 @@ This framework allow easy management of any kind of objects. It easily manages a
 How to install SmartObject
 ==========================
 
-SmartOvject is installed as a regular XOOPS/ImpressCMS module, which means you should copy the complete /smartobject folder into the /modules directory of your website. Then log in to your site as administrator, go to System Admin > Modules, look for the SmartObject icon in the list of uninstalled modules and click in the install icon. Follow the directions on the screen. Once the module is installed, you need to update the module to complete the installation. Go in System Admin > Modules > SmartObject and update the module. That's it !
+SmartObject is installed as a regular XOOPS/ImpressCMS module, which means you should copy the complete /smartobject folder into the /modules directory of your website. Then log in to your site as administrator, go to System Admin > Modules, look for the SmartObject icon in the list of uninstalled modules and click in the install icon. Follow the directions on the screen. Once the module is installed, you need to update the module to complete the installation. Go in System Admin > Modules > SmartObject and update the module. That's it !
 
 Implementing SmartObject Adsense feature on your site
 =====================================================
@@ -177,13 +177,13 @@ After these lines insert the following code :
 Support and Feedback
 ====================
 
-We encourage you to visit The SmartFactory's Community Forums to get and offer support for this module. Feedback as also always appreciated. A dedicated forum for this module is available here:
-http://smartfactory.ca/modules/newbb/viewforum.php?forum=32
+We encourage you to visit The ImpressCMS Community forums to get and offer support for this module. Feedback as also always appreciated. A dedicated forum for The SmartFactory modules is available here:
+http://community.impresscms.org/modules/newbb/viewforum.php?forum=71
 
 SmartObject on ImpressCMS
 ==========================
 
-SmartObject is fully functionnal on both XOOPS and ImpressCMS. Support for SmartObject on ImpressCMS is also offered on the SmartFactory's forum. We also encourage you to visit the ImpressCMS Community at http://community.impresscms.org for any questions or requests regarding ImpressCMS. 
+SmartObject is fully functionnal on both XOOPS and ImpressCMS.
 
 
 .:: The SmartFactory ::.
