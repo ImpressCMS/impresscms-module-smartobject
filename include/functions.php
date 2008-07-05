@@ -652,7 +652,7 @@ function smart_modFooter() {
 	$tpl->assign('modfooter', $modfooter);
 
 	if (!defined('_AM_SOBJECT_XOOPS_PRO')) {
-		define("_AM_SOBJECT_XOOPS_PRO", "Do you need help with this module ?<br />Do you need new features not yet availale ?");
+		define("_AM_SOBJECT_XOOPS_PRO", "Do you need help with this module ?<br />Do you need new features not yet available ?");
 	}
 	$smartobject_config = smart_getModuleConfig('smartobject');
 	$tpl->assign('smartobject_enable_admin_footer', $smartobject_config['enable_admin_footer']);
