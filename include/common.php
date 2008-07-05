@@ -38,7 +38,6 @@ if (!defined('SMARTOBJECT_IMAGES_ACTIONS_ROOT_PATH')) {
  * Version of the SmartObject Framework
  */
 include_once(SMARTOBJECT_ROOT_PATH . "include/version.php");
-
 include_once(SMARTOBJECT_ROOT_PATH . "include/functions.php");
 include_once(SMARTOBJECT_ROOT_PATH . "include/xoops_core_common_functions.php");
 
