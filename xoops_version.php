@@ -34,6 +34,7 @@ $modversion['date'] = "2008-07-05";
 $modversion['people']['developers'][] = "marcan (Marc-André Lanciault)";
 $modversion['people']['developers'][] = "Mithrandir (Jan Keller Pedersen)";
 $modversion['people']['developers'][] = "Sudhaker (Sudhaker Raj)";
+$modversion['people']['developers'][] = "stranger";
 
 $modversion['people']['testers'][] = "Andy Cleff";
 $modversion['people']['testers'][] = "Félix Tousignant";
