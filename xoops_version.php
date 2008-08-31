@@ -46,7 +46,7 @@ $modversion['people']['testers'][] = "Pier-André Roy";
 //$modversion['people']['documenters'][] = "documenter 1";
 
 //$modversion['people']['other'][] = "other 1";
-include_once(XOOPS_ROOT_PATH.'/modules/smartobject/language/english/common.php');
+// include_once(XOOPS_ROOT_PATH.'/modules/smartobject/language/english/common.php');
 $modversion['warning'] = _CO_SOBJECT_WARNING_BETA;
 
 $modversion['demo_site_url'] = "";
