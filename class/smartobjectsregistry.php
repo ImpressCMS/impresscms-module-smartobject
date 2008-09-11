@@ -164,7 +164,9 @@ class SmartObjectsRegistry {
 		} else {
 			$objectHandler = xoops_getModuleHandler($itemname, $modulename);
 			$object = $objectHandler->get($key);
+
 			if (!$object->isNew()) {
+				$this->_registryArray['objects'][$modulename][$itemname][$key] = $object;
 				return $object;
 			} else {
 				return false;
