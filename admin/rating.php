@@ -98,9 +98,9 @@ switch ($op) {
 
 		include_once SMARTOBJECT_ROOT_PATH."class/smartobjecttable.php";
 		$objectTable = new SmartObjectTable($smartobject_rating_handler);
-		$objectTable->addColumn(new SmartObjectColumn('name', 'left'));
-		$objectTable->addColumn(new SmartObjectColumn('dirname', 'left'));
-		$objectTable->addColumn(new SmartObjectColumn('item', 'left', false, 'getItemValue'));
+		$objectTable->addColumn(new SmartObjectColumn('name', _GLOBAL_LEFT));
+		$objectTable->addColumn(new SmartObjectColumn('dirname', _GLOBAL_LEFT));
+		$objectTable->addColumn(new SmartObjectColumn('item', _GLOBAL_LEFT, false, 'getItemValue'));
 		$objectTable->addColumn(new SmartObjectColumn('date', 'center', 150));
 		$objectTable->addColumn(new SmartObjectColumn('rate', 'center', 40, 'getRateValue'));
 

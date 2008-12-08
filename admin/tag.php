@@ -109,7 +109,7 @@ switch ($op) {
 		$objectTable->addColumn(new SmartObjectColumn('name'));
 		$objectTable->addColumn(new SmartObjectColumn('language'));
 		$objectTable->addColumn(new SmartObjectColumn('value'));
-//		$objectTable->addColumn(new SmartObjectColumn(_AM_SOBJECT_SENT_TAGS_FROM, $align='left', $width=false, 'getFromInfo'));
+//		$objectTable->addColumn(new SmartObjectColumn(_AM_SOBJECT_SENT_TAGS_FROM, $align=_GLOBAL_LEFT, $width=false, 'getFromInfo'));
 
 		$objectTable->addFilter('language', 'getLanguages');
 

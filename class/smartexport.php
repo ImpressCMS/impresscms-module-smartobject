@@ -159,10 +159,10 @@ class SmartExportRenderer {
 			case 'none' :
 				$trimFunction = FALSE;
 				break;
-			case 'left' :
+			case _GLOBAL_LEFT :
 				$trimFunction = 'ltrim';
 				break;
-			case 'right' :
+			case _GLOBAL_RIGHT :
 				$trimFunction = 'rtrim';
 				break;
 			default : //'both':

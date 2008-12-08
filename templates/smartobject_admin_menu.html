@@ -1,13 +1,13 @@
 <style type='text/css'>
 	#buttontop {
-		float:left;
+		float:<{$smarty.const._GLOBAL_LEFT}>;
 		width:100%;
 		background: #e7e7e7;
 		line-height:normal;
 		margin: 0;
 	}
 	#buttonbar {
-		float:left;
+		float:<{$smarty.const._GLOBAL_LEFT}>;
 		width:100%;
 		background: #e7e7e7 url('<{$xoops_url}>/modules/smartobject/images/bg.gif') repeat-x left bottom;
 		line-height:normal;
@@ -24,7 +24,7 @@
 		padding:0;
 	}
 	#buttonbar a {
-		float:left;
+		float:<{$smarty.const._GLOBAL_LEFT}>;
 		background:url('<{$xoops_url}>/modules/smartobject/images/left_both.gif') no-repeat left top;
 		margin:0;
 		padding:0 0 0 9px;
@@ -32,7 +32,7 @@
 		text-decoration:none;
 	}
 	#buttonbar a span {
-		float:left;
+		float:<{$smarty.const._GLOBAL_LEFT}>;
 		display:block;
 		background:url('<{$xoops_url}>/modules/smartobject/images/right_both.gif') no-repeat right top;
 		padding:5px 15px 4px 6px;
@@ -63,23 +63,23 @@
 		background-position:100% -150px;
 	}
 	#submenuswrap {
-		float: left;
+		float: <{$smarty.const._GLOBAL_LEFT}>;
 		background: #EFEFEF;
 		width: 100%;
 		border-bottom: 1px solid #000000;
 	}
 	#submenus {
 		padding: 4px 0px 4px 8px;
-		float: left;
+		float: <{$smarty.const._GLOBAL_LEFT}>;
 		font-size: 92%;
 	}
 	.subitem {
-		float:left;
+		float:<{$smarty.const._GLOBAL_LEFT}>;
 		padding-right: 10px;
 	}
 
 	#currentsubitem {
-		float:left;
+		float:<{$smarty.const._GLOBAL_LEFT}>;
 		padding-right: 10px;
 		font-weight: bold;
 	}
@@ -89,7 +89,7 @@
 		border-top: 1px solid #000000;
 		border-left: 1px solid #000000;
 		border-right: 1px solid #000000;
-		float: left;
+		float: <{$smarty.const._GLOBAL_LEFT}>;
 		margin-bottom: 15px;
 	}
 </style>
@@ -97,7 +97,7 @@
 <div id="wrap">
 <div id="buttontop">
 <div style="width: 100%; padding: 0;" cellspacing="0">
-	<div style="font-size: 10px; text-align: left; color: #2F5376; padding: 0 6px; line-height: 18px;float:left;">
+	<div style="font-size: 10px; text-align: <{$smarty.const._GLOBAL_LEFT}>; color: #2F5376; padding: 0 6px; line-height: 18px;float:<{$smarty.const._GLOBAL_LEFT}>;">
 	<{foreach from=$headermenu key=itemnum item=menuitem}>
 		<a class="nobutton" href="<{$menuitem.link}>"><{$menuitem.title}></a>
 		<{if ($itemnum + 1) <> $headermenucount}>
@@ -105,7 +105,7 @@
 		<{/if}>
 	<{/foreach}>
 	</div>
-	<div style="font-size: 10px; text-align: right; color: #2F5376; padding: 0 6px; line-height: 18px;float:right;">
+	<div style="font-size: 10px; text-align: <{$smarty.const._GLOBAL_RIGHT}>; color: #2F5376; padding: 0 6px; line-height: 18px;float:<{$smarty.const._GLOBAL_RIGHT}>;">
 		<{$breadcrumb}>
 	</div>
 </div>

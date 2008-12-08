@@ -9,6 +9,10 @@ if (!defined("XOOPS_ROOT_PATH")) {
 	die("XOOPS root path not defined");
 }
 
+if(!defined("_GLOBAL_LEFT")){
+define('_GLOBAL_LEFT', (( defined('_ADM_USE_RTL') && _ADM_USE_RTL )?"right":"left"));} // type here right in rtl languages
+if(!defined("_GLOBAL_RIGHT")){
+define('_GLOBAL_RIGHT', (( defined('_ADM_USE_RTL') && _ADM_USE_RTL )?"left":"right"));} // type here left in rtl languages
 function smart_get_css_link($cssfile) {
 	$ret = '<link rel="stylesheet" type="text/css" href="' . $cssfile . '" />';
 	return $ret;

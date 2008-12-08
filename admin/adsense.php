@@ -99,7 +99,7 @@ switch ($op) {
 
 		include_once SMARTOBJECT_ROOT_PATH."class/smartobjecttable.php";
 		$objectTable = new SmartObjectTable($smartobject_adsense_handler);
-		$objectTable->addColumn(new SmartObjectColumn('description', 'left'));
+		$objectTable->addColumn(new SmartObjectColumn('description', _GLOBAL_LEFT));
 		$objectTable->addColumn(new SmartObjectColumn(_AM_SOBJECT_ADSENSE_TAG, 'center', 200, 'getXoopsCode'));
 
 //		$objectTable->addCustomAction('getCreateItemLink');

@@ -94,8 +94,8 @@ switch ($op) {
 
 		include_once SMARTOBJECT_ROOT_PATH."class/smartobjecttable.php";
 		$objectTable = new SmartObjectTable($smartobject_customtag_handler);
-		$objectTable->addColumn(new SmartObjectColumn('name', 'left', 150, 'getCustomtagName'));
-		$objectTable->addColumn(new SmartObjectColumn('description', 'left'));
+		$objectTable->addColumn(new SmartObjectColumn('name', _GLOBAL_LEFT, 150, 'getCustomtagName'));
+		$objectTable->addColumn(new SmartObjectColumn('description', _GLOBAL_LEFT));
 		$objectTable->addColumn(new SmartObjectColumn('language', 'center', 150));
 
 //		$objectTable->addCustomAction('getCreateItemLink');

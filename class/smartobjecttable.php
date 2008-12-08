@@ -32,7 +32,7 @@ class SmartObjectColumn {
 	var $_sortable;
 	var $_customCaption;
 
-	function SmartObjectColumn($keyname, $align='left', $width=false, $customMethodForValue=false, $param = false, $customCaption = false, $sortable = true) {
+	function SmartObjectColumn($keyname, $align=_GLOBAL_LEFT, $width=false, $customMethodForValue=false, $param = false, $customCaption = false, $sortable = true) {
 		$this->_keyname = $keyname;
 		$this->_align = $align;
 		$this->_width = $width;

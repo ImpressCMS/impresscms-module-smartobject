@@ -64,8 +64,8 @@ switch ($op) {
 		include_once SMARTOBJECT_ROOT_PATH."class/smartobjecttable.php";
 		$objectTable = new SmartObjectTable($smartobject_link_handler, null, array('delete'));
 		$objectTable->addColumn(new SmartObjectColumn('date'));
-		$objectTable->addColumn(new SmartObjectColumn(_AM_SOBJECT_SENT_LINKS_FROM, $align='left', $width=false, 'getFromInfo'));
-		$objectTable->addColumn(new SmartObjectColumn(_AM_SOBJECT_SENT_LINKS_TO, $align='left', $width=false, 'getToInfo'));
+		$objectTable->addColumn(new SmartObjectColumn(_AM_SOBJECT_SENT_LINKS_FROM, $align=_GLOBAL_LEFT, $width=false, 'getFromInfo'));
+		$objectTable->addColumn(new SmartObjectColumn(_AM_SOBJECT_SENT_LINKS_TO, $align=_GLOBAL_LEFT, $width=false, 'getToInfo'));
 		$objectTable->addColumn(new SmartObjectColumn('link'));
 
 		$objectTable->addCustomAction("getViewItemLink");

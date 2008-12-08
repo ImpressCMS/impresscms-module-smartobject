@@ -1,3 +1,8 @@
+<b><u>=> Version 1.0.2 ????? (unreleased)</u></b>
+
+- Added : smarty <{$smarty.const._GLOBAL_LEFT}> for templates. (stranger)
+- Added : smarty <{$smarty.const._GLOBAL_RIGHT}> for templates. (stranger)
+
 <b><u>=> Version 1.0.1 Final (2008-07-05)</u></b>
 
 - Fixed : XOOPS logo removed from admin footer

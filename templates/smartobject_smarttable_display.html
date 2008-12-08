@@ -10,7 +10,7 @@
 
 <div style="margin-bottom: 12px;">
 	<{if $smartobject_introButtons}>
-		<div style="float: left;">
+		<div style="float: <{$smarty.const._GLOBAL_LEFT}>;">
 			<form>
 				<{foreach from=$smartobject_introButtons item=introButton}>
 					<input type="button" name="<{$introButton.name}>" onclick="location='<{$introButton.location}>'" value="<{$introButton.value}>" />
@@ -22,7 +22,7 @@
 <{if $smartobject_showFilterAndLimit || $smartobject_quicksearch}>
 <form name="pick" id="pick" action="<{$smartobject_optionssel_action}>" method="POST" style="margin: 0;">
 	<{if $smartobject_quicksearch}>
-		<div style="vertical-align: middle; float: right; border: 2px solid #C2CDD6; padding: 5px; background-color: #E6E6E6;">
+		<div style="vertical-align: middle; float: <{$smarty.const._GLOBAL_RIGHT}>; border: 2px solid #C2CDD6; padding: 5px; background-color: #E6E6E6;">
 			<b><{$smartobject_quicksearch}> :</b> <input style="vertical-align: middle;" type="text" id="quicksearch_<{$smartobject_id}>" name="quicksearch_<{$smartobject_id}>" size="20" maxlength="255"/>
 			<input style="vertical-align: middle;" type="submit" name="button_quicksearch_<{$smartobject_id}>" value="<{$smarty.const._SEARCH}>" />
 		</div>
@@ -43,7 +43,7 @@
 
 <{if $smartobject_showFilterAndLimit}>
 <{if $smartobject_pagenav}>
-	<div style="text-align:right; padding-bottom: 3px;"><{$smartobject_pagenav}></div>
+	<div style="text-align:<{$smarty.const._GLOBAL_RIGHT}>; padding-bottom: 3px;"><{$smartobject_pagenav}></div>
 <{/if}>
 
 	<table width="100%" cellspacing="1" cellpadding="2" border="0" style="border-left: 1px solid silver; border-top: 1px solid silver; border-right: 1px solid silver;">
@@ -137,7 +137,7 @@
 <{if  $smartobject_actionButtons || $smartobject_withSelectedActions}> 
 	<input type='hidden' name='op' id='op' value='' />
 	<{if $smartobject_withSelectedActions}> 
-		<div style="padding: 5px;text-align: left; border-left: 1px solid silver; border-bottom: 1px solid silver; border-right: 1px solid silver;">
+		<div style="padding: 5px;text-align: <{$smarty.const._GLOBAL_LEFT}>; border-left: 1px solid silver; border-bottom: 1px solid silver; border-right: 1px solid silver;">
 		<{$smarty.const._CO_SOBJECT_WITH_SELECTED}>
 		<select name='selected_action'>
 			<option value = ''>---</option>
@@ -149,7 +149,7 @@
 		</div>
 	<{/if}>
 	<{if $smartobject_actionButtons}> 
-		<div style="padding: 5px;text-align: right; border-left: 1px solid silver; border-bottom: 1px solid silver; border-right: 1px solid silver;">
+		<div style="padding: 5px;text-align: <{$smarty.const._GLOBAL_RIGHT}>; border-left: 1px solid silver; border-bottom: 1px solid silver; border-right: 1px solid silver;">
 			<{foreach from=$smartobject_actionButtons item=actionButton}>
 				<input type="submit" name="<{$actionButton.op}>" onclick="this.form.elements.op.value='<{$actionButton.op}>'" value="<{$actionButton.text}>" />
 			<{/foreach}>
@@ -158,7 +158,7 @@
 </form>
 <{/if}>
 <{if $smartobject_pagenav}>
-	<div style="text-align:right; padding-top: 3px;"><{$smartobject_pagenav}></div>
+	<div style="text-align:<{$smarty.const._GLOBAL_RIGHT}>; padding-top: 3px;"><{$smartobject_pagenav}></div>
 <{/if}>
 
 <{if $smartobject_introButtons}>

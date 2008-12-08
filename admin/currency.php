@@ -108,7 +108,7 @@ switch ($op) {
 
 		include_once SMARTOBJECT_ROOT_PATH."class/smartobjecttable.php";
 		$objectTable = new SmartObjectTable($smartobject_currency_handler);
-		$objectTable->addColumn(new SmartObjectColumn('name', 'left', false, 'getCurrencyLink'));
+		$objectTable->addColumn(new SmartObjectColumn('name', _GLOBAL_LEFT, false, 'getCurrencyLink'));
 		$objectTable->addColumn(new SmartObjectColumn('rate', 'center', 150));
 		$objectTable->addColumn(new SmartObjectColumn('iso4217', 'center', 150));
 		$objectTable->addColumn(new SmartObjectColumn('default_currency', 'center', 150, 'getDefault_currencyControl'));

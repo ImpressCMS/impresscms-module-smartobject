@@ -9,14 +9,14 @@
 			<div class="itemHead"><{$smarty.const._SOBJECT_RATING_RATE_THIS}></div>
 			<div class="odd">
 				<form name='smartobject_rating_form' id='smartobject_rating_form' method='post'>
-					<div style="float: left;">
+					<div style="float: <{$smarty.const._GLOBAL_LEFT}>;">
 						<input name="smartobject_rating_value" value="1" type="radio">1
 						<input name="smartobject_rating_value" value="2" type="radio">2
 						<input name="smartobject_rating_value" value="3" type="radio">3
 						<input name="smartobject_rating_value" value="4" type="radio">4
 						<input name="smartobject_rating_value" value="5" type="radio">5
 					</div>
-					<div style="float: right;">
+					<div style="float: <{$smarty.const._GLOBAL_RIGHT}>;">
 						<input name="smartobject_rating_submit" value="<{$smarty.const._SOBJECT_RATING_RATE}>" type="submit">
 					</div>
 				</form>
