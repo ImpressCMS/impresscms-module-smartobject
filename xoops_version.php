@@ -46,7 +46,13 @@ $modversion['people']['testers'][] = "Pier-André Roy";
 //$modversion['people']['documenters'][] = "documenter 1";
 
 //$modversion['people']['other'][] = "other 1";
-// include_once(XOOPS_ROOT_PATH.'/modules/smartobject/language/english/common.php');
+	$filename = XOOPS_ROOT_PATH . '/modules/smartobject/language/' . $xoopsConfig['language'] . '/common.php';
+	if (!file_exists($filename)) {
+		$filename = XOOPS_ROOT_PATH . '/modules/smartobject/language/english/common.php';
+	}
+	if (file_exists($filename)) {
+		include_once($filename);
+	}
 $modversion['warning'] = _CO_SOBJECT_WARNING_BETA;
 
 $modversion['demo_site_url'] = "";
