@@ -13,7 +13,7 @@
 define('_AM_SOBJECT_CUSTOMTAGS','تگ‌های شخصی');
 define('_AM_SOBJECT_CUSTOMTAGS_DSC', 'در اینجا لیستی از تگ‌های موجود در سیستم را مشاهده می‌کنید.');
 define('_AM_SOBJECT_CUSTOMTAG', 'تگ شخصی');
-define('_AM_SOBJECT_CUSTOMTAG_CREATE', 'ایجاد یک تگ شخصی');
+define('_AM_SOBJECT_CUSTOMTAGS_CREATE', 'ایجاد یک تگ شخصی');
 define('_AM_SOBJECT_CUSTOMTAGS_CREATE_INFO', 'برای ایجاد تگ شخصی تنها فرم زیر را پر کنید.');
 define('_AM_SOBJECT_CUSTOMTAG_DELETE_CONFIRM', 'آیا واقعاً مصمم به حذف این تگ شخصی از سیستم هستید؟');
 define('_AM_SOBJECT_CUSTOMTAGS_EDIT', 'ویرایش یک تگ شخصی');
