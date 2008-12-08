@@ -39,7 +39,7 @@ class SmartAddTo {
 	{
 		global $xoTheme, $xoopsTpl;
 
-		$xoTheme->addStylesheet(SMARTOBJECT_URL . 'include/addto/addto.css');
+		$xoTheme->addStylesheet(SMARTOBJECT_URL . 'include/addto/addto'.(( defined("_ADM_USE_RTL") && _ADM_USE_RTL )?'_rtl':'').'.css');
 
 		$xoopsTpl->assign('smartobject_addto_method', $this->_method);
 		$xoopsTpl->assign('smartobject_addto_layout', $this->_layout);
