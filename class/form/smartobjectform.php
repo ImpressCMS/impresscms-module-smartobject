@@ -230,7 +230,7 @@ var $_submit_button_caption=false;
 
 						case XOBJ_DTYPE_TXTAREA:
 
-							$form_text_area = $this->getTextArea($key, $var);
+							$form_text_area = $this->getControl('textarea', $key);
 							$this->addElement($form_text_area, $key, $var);
 							unset($form_text_area);
 							break;
@@ -354,8 +354,25 @@ var $_submit_button_caption=false;
 				return new XoopsFormLabel($this->targetObject->vars[$key]['form_caption'], $this->targetObject->getVar($key));
 				break;
 
+
 			case 'textarea' :
-				return $this->getTextArea($key);
+				$form_rows = isset($this->targetObject->controls[$key]['rows']) ? $this->targetObject->controls[$key]['rows'] : 5;
+				$form_cols = isset($this->targetObject->controls[$key]['cols']) ? $this->targetObject->controls[$key]['cols'] : 60;
+
+				$editor = new XoopsFormTextArea($this->targetObject->vars[$key]['form_caption'], $key, $this->targetObject->getVar($key, 'e'), $form_rows, $form_cols);
+				if ($this->targetObject->vars[$key]['form_dsc']) {
+					$editor->setDescription($this->targetObject->vars[$key]['form_dsc']);
+				}
+				return $editor;
+				break;
+
+			case 'dhtmltextarea' :
+				$editor = new XoopsFormDhtmlTextArea($this->targetObject->vars[$key]['form_caption'], $key, $this->targetObject->getVar($key, 'e'), 20, 60);
+				if ($this->targetObject->vars[$key]['form_dsc']) {
+					$editor->setDescription($this->targetObject->vars[$key]['form_dsc']);
+				}
+				return $editor;
+				break;
 
 			case 'theme':
 				return $this->getThemeSelect($key, $this->targetObject->vars[$key]);
@@ -657,7 +674,7 @@ var $_submit_button_caption=false;
 				$ret .= $ele;
 			} elseif ( !$ele->isHidden() ) {
 				//$class = ( $class == 'even' ) ? 'odd' : 'even';
-				$ret .= "<tr id='" . $ele->getName() . "' valign='top' align="._GLOBAL_LEFT."><td class='head'>".$ele->getCaption();
+				$ret .= "<tr id='" . $ele->getName() . "_row' valign='top' align='left'><td class='head'>".$ele->getCaption();
 				if ($ele->getDescription() != '') {
 					$ret .= '<br /><br /><span style="font-weight: normal;">'.$ele->getDescription().'</span>';
 				}
